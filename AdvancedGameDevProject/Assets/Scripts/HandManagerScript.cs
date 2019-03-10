@@ -22,7 +22,7 @@ public class HandManagerScript : MonoBehaviour
     //removes a card in the hand at a specific index and returns it.
     GameObject playCard(int index) {
         GameObject card = hand[index];
-        deck.RemoveAt(index);
+        hand.RemoveAt(index);
         return card;
     }
 
