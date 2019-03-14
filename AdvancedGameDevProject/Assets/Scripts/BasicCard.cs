@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BasicCard : MonoBehaviour
 {
@@ -17,10 +18,18 @@ public class BasicCard : MonoBehaviour
     public string cardDescription;
     public Sprite cardSprite;
 
+    public GameObject CombatManager;
+    public int callBackID;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        CombatManager = GameObject.Find("CombatManager");
+        EventTrigger trigger = GetComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerClick;
+        entry.callback.AddListener((data) => { OnCardClick(); });
+        trigger.triggers.Add(entry);
     }
 
     // Update is called once per frame
@@ -38,5 +47,11 @@ public class BasicCard : MonoBehaviour
 
         DescriptionText.text = cardDescription;
         CardImage.sprite = cardSprite;
+    }
+
+    public void OnCardClick()
+    {
+        Debug.Log("Click");
+        CombatManager.GetComponent<CombatManager>().CardClick(name, tag);
     }
 }

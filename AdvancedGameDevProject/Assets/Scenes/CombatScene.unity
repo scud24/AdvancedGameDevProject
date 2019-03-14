@@ -664,14 +664,22 @@ MonoBehaviour:
   playerDeck: {fileID: 311024618}
   playerHand: {fileID: 1011993607}
   playerHandPos: {x: -197, y: -132, z: 0}
+  playerSelectedCardPos: {x: 100, y: -70, z: 0}
+  playerDiscardPos: {x: -200, y: -70, z: 0}
   playerHandOffset: 0
   playerHandWidth: 0
+  playerCurrentCard: {fileID: 0}
+  playerDiscard: []
   enemy: {fileID: 852003531323178433}
   enemyDeck: {fileID: 7763505253485939502}
   enemyHand: {fileID: 6144673186123379002}
   enemyHandPos: {x: -197, y: 132, z: 0}
+  enemySelectedCardPos: {x: 100, y: 70, z: 0}
+  enemyDiscardPos: {x: -200, y: 70, z: 0}
   enemyHandOffset: 0
   enemyHandWidth: 0
+  enemyCurrentCard: {fileID: 0}
+  enemyDiscard: []
   dummyCards:
   - {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
   - {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
