@@ -872,12 +872,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManaCostText: {fileID: 2795916231422151000}
-  HealthText: {fileID: 2795916232172444323}
+  bonusStatsText: {fileID: 2795916232172444323}
   AttackPowerText: {fileID: 2795916230811004350}
   DescriptionText: {fileID: 2795916231527067817}
   CardImage: {fileID: 2795916231067733588}
   manaCost: 0
-  health: 0
+  defenceBonus: 0
   attackPower: 0
   cardDescription: Card Description or effect goes here.
   cardSprite: {fileID: 21300000, guid: e5a98a73794b78f4a818078459244ed2, type: 3}

@@ -167,24 +167,29 @@ public class CombatManager : MonoBehaviour
     }
 
     public void combatResolution(PlayerManagerScript player, PlayerManagerScript enemy) {
+        int pAttack = playerCurrentCard.GetComponent<BasicCard>().attackPower;
+        int pDefencebonus = playerCurrentCard.GetComponent<BasicCard>().defenceBonus;
+        int eAttack = enemyCurrentCard.GetComponent<BasicCard>().attackPower;
+        int eDefenceBonus = enemyCurrentCard.GetComponent<BasicCard>().defenceBonus;
+
         //adds defence bonuses before combat from cards
-        if (enemyCurrentCard.bonusDefence != 0 || enemyCurrentCard.bonusDefence != null) {
-            enemy.defenceBonus += enemyCurrentCard.bonusDefence;
+        if (eDefenceBonus != 0) {
+            enemy.defenceBonus += eDefenceBonus;
         }
-        if (playerCurrentCard.bonusDefence != 0 || playerCurrentCard.bonusDefence != null) {
-            player.defenceBonus += playerCurrentCard.bonusDefence;
+        if (pDefencebonus != 0 ) {
+            player.defenceBonus += pDefencebonus;
         }
         //speed check
         if (player.speed >= enemy.speed) {
-            enemy.health = enemy.health - Mathf.Max((playerCurrentCard.attackPower - (enemy.defence+enemy.defenceBonus)), 0);
+            enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence+enemy.defenceBonus)), 0);
             // place health check here end combat if health is at or below 0
 
-            player.health = player.health - Mathf.Max((enemyCurrentCard.attackPower - (player.defence + player.defenceBonus)), 0);
+            player.health = player.health - Mathf.Max((eAttack - (player.defence + player.defenceBonus)), 0);
         }
         else {
-            player.health = player.health - Mathf.Max((enemyCurrentCard.attackPower - (player.defence + player.defenceBonus)), 0);
+            player.health = player.health - Mathf.Max((eAttack - (player.defence + player.defenceBonus)), 0);
             // place health check here end combat if health is at or below 0
-            enemy.health = enemy.health - Mathf.Max((playerCurrentCard.attackPower - (enemy.defence + enemy.defenceBonus)), 0);
+            enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence + enemy.defenceBonus)), 0);
 
         }
         //reset defence bonuses at end of combat

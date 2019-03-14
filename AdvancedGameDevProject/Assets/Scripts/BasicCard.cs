@@ -42,7 +42,7 @@ public class BasicCard : MonoBehaviour
     public void SetupUI()
     {
         ManaCostText.text = manaCost.ToString();
-        DefenceBonusText.text = defenceBonus.ToString();
+        bonusStatsText.text = defenceBonus.ToString();
         AttackPowerText.text = attackPower.ToString();
 
         DescriptionText.text = cardDescription;
