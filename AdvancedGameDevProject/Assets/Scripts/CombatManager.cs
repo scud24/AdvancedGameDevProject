@@ -31,6 +31,13 @@ public class CombatManager : MonoBehaviour
     public List<GameObject> dummyCards;
 
     public GameObject playArea;
+    public GameObject endPanel;
+    public GameObject endPanelText;
+    public GameObject startButton;
+    public GameObject playerTurnButton;
+
+    public Animator playerAnimator;
+    public Animator enemyAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +82,9 @@ public class CombatManager : MonoBehaviour
             newCard.tag = "Player";
             newCard2.tag = "Player";
             newCard3.tag = "Player";
+            newCard.SetActive(true);
+            newCard2.SetActive(true);
+            newCard3.SetActive(true);
         }
         playerHandOffset = playerHandWidth / playerHand.Count();
         for(int i = 0; i < playerHand.Count(); i++)
@@ -92,7 +102,7 @@ public class CombatManager : MonoBehaviour
         if( int.TryParse(callerName, out callbackIndex))
         {
             if(callerTag == "Player")
-            {   
+            {
                 /*
                 if(playerCurrentCard != null)
                 {
@@ -100,15 +110,21 @@ public class CombatManager : MonoBehaviour
                     playerDiscard.Add(playerCurrentCard);
                 }
                 */
+                playerAnimator.SetTrigger("attack");
                 playerCurrentCard = playerHand.playCard(callbackIndex);
                 playerCurrentCard.transform.localPosition = playerSelectedCardPos;
                 playerCurrentCard.name = "PlayerCurrentCard";
-                for (int i = 0; i < playerHand.Count(); i++)
+                for (int i = playerHand.Count()-1; i >= 0; i--)
                 {
-                    Vector3 tempPos = new Vector3(playerHandPos.x, playerHandPos.y, playerHandPos.z);
+                    Debug.Log("Storing card " + i);
+                    /*Vector3 tempPos = new Vector3(playerHandPos.x, playerHandPos.y, playerHandPos.z);
                     tempPos.x = tempPos.x + (playerHandOffset * i);
                     playerHand.getCardAtIndex(i).transform.localPosition = tempPos;
-                    playerHand.getCardAtIndex(i).name = i.ToString();
+                    playerHand.getCardAtIndex(i).name = i.ToString();*/
+                    GameObject tempCard = playerHand.playCard(i);
+                    playerDeck.addCard(tempCard);
+                    tempCard.SetActive(false);
+                    
                 }
             }
             combatResolution();
@@ -137,6 +153,8 @@ public class CombatManager : MonoBehaviour
 
     public void EnemyTurn()
     {
+        startButton.GetComponent<Button>().interactable = false;
+        playerTurnButton.GetComponent<Button>().interactable = true;
         Debug.Log(enemyDeck.Count());
         if (enemyDeck.Count() > 0)
         {
@@ -233,11 +251,27 @@ public class CombatManager : MonoBehaviour
 
     public void EnemyAction()
     {
+        if (enemyCurrentCard != null)
+        {
+            enemyCurrentCard.transform.localPosition = enemyDiscardPos;
+            enemyDiscard.Add(enemyCurrentCard);
+        }
+        enemyAnimator.SetTrigger("attack");
+        enemyCurrentCard = enemyHand.playCard(0);
+        enemyCurrentCard.transform.localPosition = enemySelectedCardPos;
+        enemyCurrentCard.name = "EnemyCurrentCard";
+        for (int i = 0; i < enemyHand.Count(); i++)
+        {
+            Vector3 tempPos = new Vector3(enemyHandPos.x, enemyHandPos.y, enemyHandPos.z);
+            tempPos.x = tempPos.x + (enemyHandOffset * i);
+            enemyHand.getCardAtIndex(i).transform.localPosition = tempPos;
+            enemyHand.getCardAtIndex(i).name = i.ToString();
+        }
         //int callbackIndex;
         //if (int.TryParse(EventSystem.current.currentSelectedGameObject.name, out callbackIndex))
         //{
-            enemyCurrentCard = enemyHand.playCard(0);
-            enemyCurrentCard.transform.position = enemySelectedCardPos;
+        //enemyCurrentCard = enemyHand.playCard(0);
+        //    enemyCurrentCard.transform.position = enemySelectedCardPos;
         //}
     }
 }
