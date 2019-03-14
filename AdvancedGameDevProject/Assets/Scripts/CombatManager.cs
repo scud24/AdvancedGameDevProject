@@ -48,6 +48,9 @@ public class CombatManager : MonoBehaviour
         Debug.Log(playerDeck.Count());
         Debug.Log(enemyDeck.Count());
         //EnemySetup();
+        enemy.health = 10;
+        player.health = 10;
+
     }
 
     // Update is called once per frame
@@ -89,12 +92,14 @@ public class CombatManager : MonoBehaviour
         if( int.TryParse(callerName, out callbackIndex))
         {
             if(callerTag == "Player")
-            {
+            {   
+                /*
                 if(playerCurrentCard != null)
                 {
                     playerCurrentCard.transform.localPosition = playerDiscardPos;
                     playerDiscard.Add(playerCurrentCard);
                 }
+                */
                 playerCurrentCard = playerHand.playCard(callbackIndex);
                 playerCurrentCard.transform.localPosition = playerSelectedCardPos;
                 playerCurrentCard.name = "PlayerCurrentCard";
@@ -106,6 +111,8 @@ public class CombatManager : MonoBehaviour
                     playerHand.getCardAtIndex(i).name = i.ToString();
                 }
             }
+            combatResolution();
+            /*
             else if (callerTag == "Enemy")
             {
                 if(enemyCurrentCard != null)
@@ -124,6 +131,7 @@ public class CombatManager : MonoBehaviour
                     enemyHand.getCardAtIndex(i).name = i.ToString();
                 }
             }
+            */
         }
     }
 
@@ -134,16 +142,18 @@ public class CombatManager : MonoBehaviour
         {
             GameObject newCard = Instantiate(enemyDeck.drawCard());
             enemyHand.addCard(newCard);
+            /*
             GameObject newCard2 = Instantiate(enemyDeck.drawCard());
             enemyHand.addCard(newCard2);
             GameObject newCard3 = Instantiate(enemyDeck.drawCard());
             enemyHand.addCard(newCard3);
+            */
             newCard.transform.SetParent(playArea.transform);
-            newCard2.transform.SetParent(playArea.transform);
-            newCard3.transform.SetParent(playArea.transform);
+            //newCard2.transform.SetParent(playArea.transform);
+            //newCard3.transform.SetParent(playArea.transform);
             newCard.tag = "Enemy";
-            newCard2.tag = "Enemy";
-            newCard3.tag = "Enemy";
+            //newCard2.tag = "Enemy";
+            //newCard3.tag = "Enemy";
         }
         enemyHandOffset = enemyHandWidth / enemyHand.Count();
         for (int i = 0; i < enemyHand.Count(); i++)
@@ -153,6 +163,7 @@ public class CombatManager : MonoBehaviour
             enemyHand.getCardAtIndex(i).transform.localPosition = tempPos;
             enemyHand.getCardAtIndex(i).name =  i.ToString();
         }
+        EnemyAction();
     }
     public void EnemySetup()
     {
@@ -166,7 +177,7 @@ public class CombatManager : MonoBehaviour
         Debug.Log("enemy " + enemyDeck.Count());
     }
 
-    public void combatResolution(PlayerManagerScript player, PlayerManagerScript enemy) {
+    public void combatResolution() {
         int pAttack = playerCurrentCard.GetComponent<BasicCard>().attackPower;
         int pDefencebonus = playerCurrentCard.GetComponent<BasicCard>().defenceBonus;
         int eAttack = enemyCurrentCard.GetComponent<BasicCard>().attackPower;
@@ -183,27 +194,50 @@ public class CombatManager : MonoBehaviour
         if (player.speed >= enemy.speed) {
             enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence+enemy.defenceBonus)), 0);
             // place health check here end combat if health is at or below 0
-
+            if (enemy.health <= 0) {
+                return;
+            }
             player.health = player.health - Mathf.Max((eAttack - (player.defence + player.defenceBonus)), 0);
+            if (player.health <= 0) {
+                return;
+            }
         }
         else {
             player.health = player.health - Mathf.Max((eAttack - (player.defence + player.defenceBonus)), 0);
-            // place health check here end combat if health is at or below 0
-            enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence + enemy.defenceBonus)), 0);
 
+            // place health check here end combat if health is at or below 0
+            if (player.health <= 0) {
+                return;
+            }
+
+            enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence + enemy.defenceBonus)), 0);
+            if (enemy.health <= 0) {
+                return;
+            }
         }
+
+
         //reset defence bonuses at end of combat
         enemy.defenceBonus = 0;
         player.defenceBonus = 0;
+        if (enemyCurrentCard != null) {
+            enemyCurrentCard.transform.localPosition = enemyDiscardPos;
+            enemyDiscard.Add(enemyCurrentCard);
+        }
+        if (playerCurrentCard != null) {
+            playerCurrentCard.transform.localPosition = playerDiscardPos;
+            playerDiscard.Add(playerCurrentCard);
+        }
+        EnemyTurn();
     }
 
     public void EnemyAction()
     {
-        int callbackIndex;
-        if (int.TryParse(EventSystem.current.currentSelectedGameObject.name, out callbackIndex))
-        {
-            enemyCurrentCard = enemyHand.playCard(callbackIndex);
+        //int callbackIndex;
+        //if (int.TryParse(EventSystem.current.currentSelectedGameObject.name, out callbackIndex))
+        //{
+            enemyCurrentCard = enemyHand.playCard(0);
             enemyCurrentCard.transform.position = enemySelectedCardPos;
-        }
+        //}
     }
 }
