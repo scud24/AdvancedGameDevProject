@@ -7,13 +7,13 @@ using UnityEngine.EventSystems;
 public class BasicCard : MonoBehaviour
 {
     public Text ManaCostText;
-    public Text HealthText;
+    public Text bonusStatsText;
     public Text AttackPowerText;
     public Text DescriptionText;
     public Image CardImage;
 
     public int manaCost;
-    public int health;
+    public int defenceBonus; //if applicable
     public int attackPower;
     public string cardDescription;
     public Sprite cardSprite;
@@ -42,7 +42,7 @@ public class BasicCard : MonoBehaviour
     public void SetupUI()
     {
         ManaCostText.text = manaCost.ToString();
-        HealthText.text = health.ToString();
+        DefenceBonusText.text = defenceBonus.ToString();
         AttackPowerText.text = attackPower.ToString();
 
         DescriptionText.text = cardDescription;

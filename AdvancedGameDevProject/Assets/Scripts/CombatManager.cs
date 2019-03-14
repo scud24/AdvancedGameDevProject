@@ -166,6 +166,32 @@ public class CombatManager : MonoBehaviour
         Debug.Log("enemy " + enemyDeck.Count());
     }
 
+    public void combatResolution(PlayerManagerScript player, PlayerManagerScript enemy) {
+        //adds defence bonuses before combat from cards
+        if (enemyCurrentCard.bonusDefence != 0 || enemyCurrentCard.bonusDefence != null) {
+            enemy.defenceBonus += enemyCurrentCard.bonusDefence;
+        }
+        if (playerCurrentCard.bonusDefence != 0 || playerCurrentCard.bonusDefence != null) {
+            player.defenceBonus += playerCurrentCard.bonusDefence;
+        }
+        //speed check
+        if (player.speed >= enemy.speed) {
+            enemy.health = enemy.health - Mathf.Max((playerCurrentCard.attackPower - (enemy.defence+enemy.defenceBonus)), 0);
+            // place health check here end combat if health is at or below 0
+
+            player.health = player.health - Mathf.Max((enemyCurrentCard.attackPower - (player.defence + player.defenceBonus)), 0);
+        }
+        else {
+            player.health = player.health - Mathf.Max((enemyCurrentCard.attackPower - (player.defence + player.defenceBonus)), 0);
+            // place health check here end combat if health is at or below 0
+            enemy.health = enemy.health - Mathf.Max((playerCurrentCard.attackPower - (enemy.defence + enemy.defenceBonus)), 0);
+
+        }
+        //reset defence bonuses at end of combat
+        enemy.defenceBonus = 0;
+        player.defenceBonus = 0;
+    }
+
     public void EnemyAction()
     {
         int callbackIndex;
