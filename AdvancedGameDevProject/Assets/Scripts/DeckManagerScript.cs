@@ -6,13 +6,16 @@ using System.Linq;
 public class DeckManagerScript : MonoBehaviour
 {
 
-    private List<GameObject> deck;
+    public List<GameObject> deck;
 
 
 
     // Start is called before the first frame update
     void Start(){
-        
+        if(deck==null)
+        {
+            deck = new List<GameObject>();
+        }
     }
 
     // Update is called once per frame
@@ -20,19 +23,28 @@ public class DeckManagerScript : MonoBehaviour
         
     }
     //adds a card to the deck
-    void addCard(GameObject card) {
+    public void addCard(GameObject card) {
         deck.Add(card);
     }
     //draw the top card of the deck
-    GameObject drawCard() {
-        GameObject card = deck[0];
+    public GameObject drawCard() {
+        GameObject card = deck[0].gameObject;
+        Debug.Log(card);
         deck.RemoveAt(0);
+        Debug.Log(card);
         return card;
     }
     //shuffles the deck by randomizing the order.
-    void shuffle() {
+    public void shuffle() {
         System.Random rng = new System.Random();
-        deck = (List<GameObject>)deck.OrderBy(x => rng.Next());
+        deck = deck.OrderBy(x => rng.Next()).ToList<GameObject>();
+    }
+
+
+    //Returns number of cards in hand currently
+    public int Count()
+    {
+        return deck.Count;
     }
 
 }

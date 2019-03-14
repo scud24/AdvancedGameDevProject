@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerManagerScript : MonoBehaviour
 {
+    public DeckManagerScript deck;
+    public HandManagerScript hand;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,6 @@ public class PlayerManagerScript : MonoBehaviour
     {
         
     }
+
+
 }
