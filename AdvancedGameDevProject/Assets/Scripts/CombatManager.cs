@@ -72,19 +72,29 @@ public class CombatManager : MonoBehaviour
         {
             GameObject newCard = Instantiate(playerDeck.drawCard());
             playerHand.addCard(newCard);
-            GameObject newCard2 = Instantiate(playerDeck.drawCard());
-            playerHand.addCard(newCard2);
-            GameObject newCard3 = Instantiate(playerDeck.drawCard());
-            playerHand.addCard(newCard3);
-            newCard.transform.SetParent(playArea.transform);
-            newCard2.transform.SetParent(playArea.transform);
-            newCard3.transform.SetParent(playArea.transform);
             newCard.tag = "Player";
-            newCard2.tag = "Player";
-            newCard3.tag = "Player";
             newCard.SetActive(true);
-            newCard2.SetActive(true);
-            newCard3.SetActive(true);
+            newCard.transform.SetParent(playArea.transform);
+            if (playerDeck.Count() > 0)
+            {
+                GameObject newCard2 = Instantiate(playerDeck.drawCard());
+                playerHand.addCard(newCard2);
+                newCard2.tag = "Player";
+                newCard2.transform.SetParent(playArea.transform);
+                newCard2.SetActive(true);
+            }
+            if (playerDeck.Count() > 0)
+            {
+                GameObject newCard3 = Instantiate(playerDeck.drawCard());
+                playerHand.addCard(newCard3);
+                newCard3.transform.SetParent(playArea.transform);
+                newCard3.tag = "Player";
+                newCard3.SetActive(true);
+            }
+        }
+        else
+        {
+            playerTurnButton.GetComponent<Button>().interactable = false;
         }
         playerHandOffset = playerHandWidth / playerHand.Count();
         for(int i = 0; i < playerHand.Count(); i++)
@@ -257,9 +267,12 @@ public class CombatManager : MonoBehaviour
             enemyDiscard.Add(enemyCurrentCard);
         }
         enemyAnimator.SetTrigger("attack");
-        enemyCurrentCard = enemyHand.playCard(0);
-        enemyCurrentCard.transform.localPosition = enemySelectedCardPos;
-        enemyCurrentCard.name = "EnemyCurrentCard";
+        if (enemyHand.Count() > 0)
+        {
+            enemyCurrentCard = enemyHand.playCard(0);
+            enemyCurrentCard.transform.localPosition = enemySelectedCardPos;
+            enemyCurrentCard.name = "EnemyCurrentCard";
+        }
         for (int i = 0; i < enemyHand.Count(); i++)
         {
             Vector3 tempPos = new Vector3(enemyHandPos.x, enemyHandPos.y, enemyHandPos.z);

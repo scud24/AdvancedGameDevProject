@@ -893,7 +893,7 @@ MonoBehaviour:
   player: {fileID: 1175711841506425804}
   playerDeck: {fileID: 311024618}
   playerHand: {fileID: 1011993607}
-  playerHandPos: {x: -157, y: -70, z: 0}
+  playerHandPos: {x: -117, y: -70, z: 0}
   playerSelectedCardPos: {x: 100, y: -50, z: 0}
   playerDiscardPos: {x: -170, y: -30, z: 0}
   playerHandOffset: 0
@@ -903,7 +903,7 @@ MonoBehaviour:
   enemy: {fileID: 852003531323178433}
   enemyDeck: {fileID: 7763505253485939502}
   enemyHand: {fileID: 6144673186123379002}
-  enemyHandPos: {x: -157, y: 70, z: 0}
+  enemyHandPos: {x: -117, y: 70, z: 0}
   enemySelectedCardPos: {x: 100, y: 50, z: 0}
   enemyDiscardPos: {x: -170, y: 30, z: 0}
   enemyHandOffset: 0
@@ -1328,6 +1328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: monster
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 4e6d6f878b5b5438bae1c6d66a2259e2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 405f8f38f5ef6df4abc8a3e46b66e83a, type: 2}
     - target: {fileID: 400132, guid: 4e6d6f878b5b5438bae1c6d66a2259e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.66
@@ -1372,10 +1376,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 4e6d6f878b5b5438bae1c6d66a2259e2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 405f8f38f5ef6df4abc8a3e46b66e83a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e6d6f878b5b5438bae1c6d66a2259e2, type: 3}
 --- !u!95 &1969798495 stripped
