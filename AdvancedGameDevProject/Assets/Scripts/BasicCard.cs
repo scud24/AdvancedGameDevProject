@@ -9,18 +9,18 @@ public class BasicCard : MonoBehaviour
     public Text ManaCostText;
     public Text bonusStatsText;
     public Text AttackPowerText;
-    public Text DescriptionText;
+    public Text TitleText;
     public Image CardImage;
 
-    public int manaCost;
-    public int defenceBonus; //if applicable
-    public int attackPower;
-    public string cardDescription;
+
+    public CardData cardData;
     public Sprite cardSprite;
 
     public GameObject CombatManager;
     public int callBackID;
 
+
+    public bool sendsClick = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,10 @@ public class BasicCard : MonoBehaviour
         float r = Random.Range(0.1f, 1);
         float g = Random.Range(0.1f, 1);
         float b = Random.Range(0.1f, 1);
-        CardImage.color = new Color(r,g,b);
+        //CardImage.color = new Color(r,g,b);
+
+        
+        //SetupUI();
     }
 
     // Update is called once per frame
@@ -45,17 +48,28 @@ public class BasicCard : MonoBehaviour
     //Set up a card's UI elements after filling its values from the main set of card data
     public void SetupUI()
     {
-        ManaCostText.text = manaCost.ToString();
-        bonusStatsText.text = defenceBonus.ToString();
-        AttackPowerText.text = attackPower.ToString();
+        //Debug.Log(cardData.cardTitle);
+        //Debug.Log(cardData.attackPower);
+        ManaCostText.text = cardData.manaCost.ToString();
+        bonusStatsText.text = cardData.defenceBonus.ToString();
+        AttackPowerText.text = cardData.attackPower.ToString();
 
-        DescriptionText.text = cardDescription;
-        CardImage.sprite = cardSprite;
+        TitleText.text = cardData.cardTitle;
+        //CardImage.sprite = cardSprite;
+        CardImage.color = cardData.cardColor;
+    }
+    public void SetCardData(CardData cd)
+    {
+        //Debug.Log(cd);
+        cardData = cd;
     }
 
     public void OnCardClick()
     {
-        Debug.Log("Click");
-        CombatManager.GetComponent<CombatManager>().CardClick(name, tag);
+        if (sendsClick)
+        {
+            Debug.Log("Click from " + name);
+            CombatManager.GetComponent<CombatManager>().CardClick(name, tag);
+        }
     }
 }
