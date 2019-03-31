@@ -92,5 +92,10 @@ PrefabInstance:
       propertyPath: cardColor.g
       value: 0.7411765
       objectReference: {fileID: 0}
+    - target: {fileID: 1518782053867242458, guid: 56ca664b10baef247a32d486e4da148e,
+        type: 3}
+      propertyPath: attackAnimation
+      value: sword_and_shield_slash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56ca664b10baef247a32d486e4da148e, type: 3}

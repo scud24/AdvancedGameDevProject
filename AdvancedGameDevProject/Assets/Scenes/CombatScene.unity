@@ -611,6 +611,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3037171d1d042cd4896b3a09e8edfa28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &846868042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_Name
+      value: Crouch Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9a489cc9deb8d342a5f07cbe4748367, type: 3}
 --- !u!1 &870427247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1190288043282987706, guid: ed1b90107fc689c4fb5be0cdee2eec81,
@@ -907,6 +964,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayAreaPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1190288044264992206, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190288042837694376, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3911893410528685586, guid: ed1b90107fc689c4fb5be0cdee2eec81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,6 +1078,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190288043282987706, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190288043411254754, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190288042949317073, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190288043896623921, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190288042674590119, guid: ed1b90107fc689c4fb5be0cdee2eec81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3911893410012466415, guid: ed1b90107fc689c4fb5be0cdee2eec81,
         type: 3}
