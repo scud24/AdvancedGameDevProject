@@ -48,5 +48,5 @@ MonoBehaviour:
   attackPower: 0
   numAttacks: 0
   cardTitle: Card Title
-  attackAnimation: attack
+  attackAnimation: basic_attack
   cardColor: {r: 1, g: 1, b: 1, a: 0}

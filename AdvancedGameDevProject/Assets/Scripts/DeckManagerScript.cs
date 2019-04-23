@@ -6,7 +6,7 @@ using System.Linq;
 public class DeckManagerScript : MonoBehaviour
 {
 
-    public List<GameObject> deck;
+    public List<CardData> deck;
 
 
 
@@ -14,21 +14,28 @@ public class DeckManagerScript : MonoBehaviour
     void Start(){
         if(deck==null)
         {
-            deck = new List<GameObject>();
+            deck = new List<CardData>();
         }
     }
 
-    // Update is called once per frame
-    void Update(){
-        
+
+    public void SetupFromList(List<CardData> cdl)
+    {
+        deck = new List<CardData>();
+        for (int i = 0; i < cdl.Count; i++)
+        {
+            deck.Add(cdl[i]);
+        }
     }
+
     //adds a card to the deck
-    public void addCard(GameObject card) {
+    public void addCard(CardData card) {
         deck.Add(card);
     }
+
     //draw the top card of the deck
-    public GameObject drawCard() {
-        GameObject card = deck[0].gameObject;
+    public CardData drawCard() {
+        CardData card = deck[0];
         //Debug.Log(card);
         deck.RemoveAt(0);
         //Debug.Log(card);
@@ -37,7 +44,7 @@ public class DeckManagerScript : MonoBehaviour
     //shuffles the deck by randomizing the order.
     public void shuffle() {
         System.Random rng = new System.Random();
-        deck = deck.OrderBy(x => rng.Next()).ToList<GameObject>();
+        deck = deck.OrderBy(x => rng.Next()).ToList<CardData>();
     }
 
 
