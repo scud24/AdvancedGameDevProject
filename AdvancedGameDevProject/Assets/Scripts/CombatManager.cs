@@ -8,15 +8,9 @@ public class CombatManager : MonoBehaviour
 {
     public PlayerManagerScript player;
     public DeckManagerScript playerDeck;
-    //public HandManagerScript playerHand;
-    //public Vector3 playerHandPos;
-    //public Vector3 playerSelectedCardPos;
-    //public Vector3 playerDiscardPos;
-    //public float playerHandOffset;
-    //public float playerHandWidth;
-    public GameObject playerCurrentCard;
+    public CardData playerCurrentCard;
     public GameObject playerCurrentCardUI;
-    public List<GameObject> playerDiscard;
+    public List<CardData> playerDiscard;
     public GameObject playerDiscardUI;
     public GameObject playerHandUI1;
     public GameObject playerHandUI2;
@@ -25,14 +19,9 @@ public class CombatManager : MonoBehaviour
     public PlayerManagerScript enemy;
     public DeckManagerScript enemyDeck;
     public HandManagerScript enemyHand;
-    //public Vector3 enemyHandPos;
-    //public Vector3 enemySelectedCardPos;
-    //public Vector3 enemyDiscardPos;
-    //public float enemyHandOffset;
-    //public float enemyHandWidth;
-    public GameObject enemyCurrentCard;
+    public CardData enemyCurrentCard;
     public GameObject enemyCurrentCardUI;
-    public List<GameObject> enemyDiscard;
+    public List<CardData> enemyDiscard;
     public GameObject enemyDiscardUI;
 
     public List<GameObject> dummyCards;
@@ -47,18 +36,19 @@ public class CombatManager : MonoBehaviour
 
     public Animator playerAnimator;
     public Animator enemyAnimator;
+
+    public GameObject pgm;
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < dummyCards.Count; i++)
-        {
-            playerDeck.addCard(dummyCards[i]);
-            enemyDeck.addCard(dummyCards[i]);
-        }
+        pgm = GameObject.Find("PersistentGameManager");
+        player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
+        playerDeck.SetupFromList(player.currentDeck);
+
+        enemy.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);//TODO ENEMY MANAGER
+        enemyDeck.SetupFromList(player.currentDeck);
         Debug.Log(playerDeck.Count());
         Debug.Log(enemyDeck.Count());
-        enemy.health = 10;
-        player.health = 10;
 
         playerDeck.shuffle();
         enemyDeck.shuffle();
@@ -82,21 +72,21 @@ public class CombatManager : MonoBehaviour
     {
         if (playerDeck.Count() > 0)
         {
-            GameObject newCardData = playerDeck.drawCard();
-            playerHandUI1.GetComponent<BasicCard>().SetCardData(newCardData.GetComponent<CardData>());
+            CardData newCardData = playerDeck.drawCard();
+            playerHandUI1.GetComponent<BasicCard>().SetCardData(newCardData);
             playerHandUI1.GetComponent<BasicCard>().SetupUI();
             playerHandUI1.SetActive(true);
             if (playerDeck.Count() > 0)
             {
-                GameObject newCardData2 = playerDeck.drawCard();
-                playerHandUI2.GetComponent<BasicCard>().SetCardData(newCardData2.GetComponent<CardData>());
+                CardData newCardData2 = playerDeck.drawCard();
+                playerHandUI2.GetComponent<BasicCard>().SetCardData(newCardData2);
                 playerHandUI2.GetComponent<BasicCard>().SetupUI();
                 playerHandUI2.SetActive(true);
             }
             if (playerDeck.Count() > 0)
             {
-                GameObject newCardData3 = playerDeck.drawCard();
-                playerHandUI3.GetComponent<BasicCard>().SetCardData(newCardData3.GetComponent<CardData>());
+                CardData newCardData3 = playerDeck.drawCard();
+                playerHandUI3.GetComponent<BasicCard>().SetCardData(newCardData3);
                 playerHandUI3.GetComponent<BasicCard>().SetupUI();
                 playerHandUI3.SetActive(true);
             }
@@ -113,23 +103,23 @@ public class CombatManager : MonoBehaviour
     {
         if(callerName == "PlayerHandCard1")
         {
-            playerCurrentCard = playerHandUI1.GetComponent<BasicCard>().cardData.gameObject;
-            playerDeck.addCard(playerHandUI2.GetComponent<BasicCard>().cardData.gameObject);
-            playerDeck.addCard(playerHandUI3.GetComponent<BasicCard>().cardData.gameObject);
+            playerCurrentCard = playerHandUI1.GetComponent<BasicCard>().cardData;
+            playerDeck.addCard(playerHandUI2.GetComponent<BasicCard>().cardData);
+            playerDeck.addCard(playerHandUI3.GetComponent<BasicCard>().cardData);
 
         }
         if (callerName == "PlayerHandCard2")
         {
-            playerCurrentCard = playerHandUI2.GetComponent<BasicCard>().cardData.gameObject;
-            playerDeck.addCard(playerHandUI1.GetComponent<BasicCard>().cardData.gameObject);
-            playerDeck.addCard(playerHandUI3.GetComponent<BasicCard>().cardData.gameObject);
+            playerCurrentCard = playerHandUI2.GetComponent<BasicCard>().cardData;
+            playerDeck.addCard(playerHandUI1.GetComponent<BasicCard>().cardData);
+            playerDeck.addCard(playerHandUI3.GetComponent<BasicCard>().cardData);
 
         }
         if (callerName == "PlayerHandCard3")
         {
-            playerCurrentCard = playerHandUI3.GetComponent<BasicCard>().cardData.gameObject;
-            playerDeck.addCard(playerHandUI2.GetComponent<BasicCard>().cardData.gameObject);
-            playerDeck.addCard(playerHandUI1.GetComponent<BasicCard>().cardData.gameObject);
+            playerCurrentCard = playerHandUI3.GetComponent<BasicCard>().cardData;
+            playerDeck.addCard(playerHandUI2.GetComponent<BasicCard>().cardData);
+            playerDeck.addCard(playerHandUI1.GetComponent<BasicCard>().cardData);
 
         }
         playerHandUI1.SetActive(false);
@@ -141,6 +131,7 @@ public class CombatManager : MonoBehaviour
 
         waitingForNextTurn = true;
         currentTurnEndWait = MAX_TURN_END_WAIT;
+        PlayAttackAnimations();
     }
 
     public void StartCombat()
@@ -152,58 +143,30 @@ public class CombatManager : MonoBehaviour
         EnemyDraw();
     }
 
+    public void PlayAttackAnimations()
+    {
+        playerAnimator.SetTrigger(playerCurrentCard.GetComponent<CardData>().attackAnimation);
+        //enemyAnimator.SetTrigger(enemyCurrentCard.GetComponent<CardData>().attackAnimation);
+        enemyAnimator.SetTrigger("basic_attack");
+    }
+
     public void combatResolution()
     {
         Debug.Log("combat resolution");
 
 
-        playerAnimator.SetTrigger(playerCurrentCard.GetComponent<CardData>().attackAnimation);
-        //enemyAnimator.SetTrigger(enemyCurrentCard.GetComponent<CardData>().attackAnimation);
-        enemyAnimator.SetTrigger("basic_attack");
+       
 
-        int pAttack = playerCurrentCard.GetComponent<CardData>().attackPower;
-        int pDefencebonus = playerCurrentCard.GetComponent<CardData>().defenceBonus;
-        int eAttack = enemyCurrentCard.GetComponent<CardData>().attackPower;
-        int eDefenceBonus = enemyCurrentCard.GetComponent<CardData>().defenceBonus;
-
-        //adds defence bonuses before combat from cards
-        if (eDefenceBonus != 0) {
-            enemy.defenceBonus += eDefenceBonus;
-        }
-        if (pDefencebonus != 0 ) {
-            player.defenceBonus += pDefencebonus;
-        }
-        //speed check
-        /*
-        if (player.speed >= enemy.speed) {
-            enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence+enemy.defenceBonus)), 0);
-            // place health check here end combat if health is at or below 0
-            if (enemy.health <= 0) {
-                return;
-            }
-            player.health = player.health - Mathf.Max((eAttack - (player.defence + player.defenceBonus)), 0);
-            if (player.health <= 0) {
-                return;
-            }
-        }
-        else {
-            player.health = player.health - Mathf.Max((eAttack - (player.defence + player.defenceBonus)), 0);
-
-            // place health check here end combat if health is at or below 0
-            if (player.health <= 0) {
-                return;
-            }
-
-            enemy.health = enemy.health - Mathf.Max((pAttack - (enemy.defence + enemy.defenceBonus)), 0);
-            if (enemy.health <= 0) {
-                return;
-            }
-        }*/
+        int pAttack = playerCurrentCard.attackPower;
+        int pDefenceBonus = playerCurrentCard.defenceBonus;
+        int eAttack = enemyCurrentCard.attackPower;
+        int eDefenceBonus = enemyCurrentCard.defenceBonus;
 
 
-        //reset defence bonuses at end of combat
-        enemy.defenceBonus = 0;
-        player.defenceBonus = 0;
+        enemy.DamagePlayer(pAttack - eDefenceBonus);
+        player.DamagePlayer(eAttack - pDefenceBonus);
+
+
         if (enemyCurrentCard != null) {
             //enemyCurrentCard.transform.localPosition = enemyDiscardPos;
             Debug.Log(enemyCurrentCard.GetComponent<CardData>().cardTitle);
