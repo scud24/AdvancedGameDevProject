@@ -16,7 +16,7 @@ using UnityEngine;
 public class PersistentGameManager : MonoBehaviour
 {
     //TODO: Add various structures for handling game data here
-
+    public PlayerData playerData;
     // Start is called before the first frame update
     void Start()
     {
