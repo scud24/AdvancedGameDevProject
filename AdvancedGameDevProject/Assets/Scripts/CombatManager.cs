@@ -157,12 +157,10 @@ public class CombatManager : MonoBehaviour
         Debug.Log("combat resolution");
 
 
-        playerAnimator.SetTrigger("attack");//Move to combat actuation
-        enemyAnimator.SetTrigger("attack");
-        while (currentTurnEndWait > 0)
-        {
+        playerAnimator.SetTrigger(playerCurrentCard.GetComponent<CardData>().attackAnimation);
+        //enemyAnimator.SetTrigger(enemyCurrentCard.GetComponent<CardData>().attackAnimation);
+        enemyAnimator.SetTrigger("basic_attack");
 
-        }
         int pAttack = playerCurrentCard.GetComponent<CardData>().attackPower;
         int pDefencebonus = playerCurrentCard.GetComponent<CardData>().defenceBonus;
         int eAttack = enemyCurrentCard.GetComponent<CardData>().attackPower;

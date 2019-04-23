@@ -30,10 +30,6 @@ public class BasicCard : MonoBehaviour
         entry.eventID = EventTriggerType.PointerClick;
         entry.callback.AddListener((data) => { OnCardClick(); });
         trigger.triggers.Add(entry);
-        float r = Random.Range(0.1f, 1);
-        float g = Random.Range(0.1f, 1);
-        float b = Random.Range(0.1f, 1);
-        //CardImage.color = new Color(r,g,b);
 
         
         //SetupUI();
