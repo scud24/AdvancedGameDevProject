@@ -29,9 +29,9 @@ public class DeckManagerScript : MonoBehaviour
     //draw the top card of the deck
     public GameObject drawCard() {
         GameObject card = deck[0].gameObject;
-        Debug.Log(card);
+        //Debug.Log(card);
         deck.RemoveAt(0);
-        Debug.Log(card);
+        //Debug.Log(card);
         return card;
     }
     //shuffles the deck by randomizing the order.
