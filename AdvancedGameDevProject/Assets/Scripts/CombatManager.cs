@@ -24,6 +24,9 @@ public class CombatManager : MonoBehaviour
     public List<CardData> enemyDiscard;
     public GameObject enemyDiscardUI;
 
+    public PlayerData placeHolderPlayer;
+    public PlayerData placeholderEnemy;
+
     public List<GameObject> dummyCards;
     public float MAX_TURN_END_WAIT;
     public float currentTurnEndWait;
@@ -42,11 +45,13 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         pgm = GameObject.Find("PersistentGameManager");
-        player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
+        //player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
+        player.SetupFromPlayerData(placeHolderPlayer);
         playerDeck.SetupFromList(player.currentDeck);
 
-        enemy.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);//TODO ENEMY MANAGER
-        enemyDeck.SetupFromList(player.currentDeck);
+        //enemy.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);//TODO ENEMY MANAGER
+        enemy.SetupFromPlayerData(placeholderEnemy);
+        enemyDeck.SetupFromList(enemy.currentDeck);
         Debug.Log(playerDeck.Count());
         Debug.Log(enemyDeck.Count());
 
