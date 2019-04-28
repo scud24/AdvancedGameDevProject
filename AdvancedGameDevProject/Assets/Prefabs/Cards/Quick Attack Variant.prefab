@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2049318060030877151
+--- !u!1001 &7452303922777657212
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,42 +10,22 @@ PrefabInstance:
     - target: {fileID: 5002192757160419395, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: m_Name
-      value: Faulty Block Variant
+      value: Quick Attack
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
-      propertyPath: defenceBonus
-      value: 5
+      propertyPath: attackPower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: numAttacks
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: cardTitle
-      value: Faulty Block
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: cardColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: cardColor.g
-      value: 0.740566
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: cardColor.b
-      value: 0.740566
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: cardColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: NumDefends
-      value: 1
+      value: Quick Attack
       objectReference: {fileID: 0}
     - target: {fileID: 4181065562691005095, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}

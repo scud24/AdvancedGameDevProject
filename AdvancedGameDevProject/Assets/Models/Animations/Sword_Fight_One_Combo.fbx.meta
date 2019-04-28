@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7c97e56e69b82842a84042fbb10a214
+guid: 148f5796a4a66ca4db7ce23789e2d27e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -139,7 +139,7 @@ ModelImporter:
     400130: Spine2
     400132: //RootNode
     400134: Sword_joint
-    7400000: sword_and_shield_attack
+    7400000: Combo_Counter
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -170,10 +170,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: sword_and_shield_attack
+      name: Combo_Counter
       takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 39
+      firstFrame: 45
+      lastFrame: 146
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -70,12 +70,12 @@ PrefabInstance:
     - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
         type: 3}
       propertyPath: attackPower
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
         type: 3}
       propertyPath: defenceBonus
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
         type: 3}
@@ -95,6 +95,11 @@ PrefabInstance:
     - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
         type: 3}
       propertyPath: cardColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
+        type: 3}
+      propertyPath: numAttacks
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 0
   defenceBonus: 0
+  NumDefends: 0
   attackPower: 0
   numAttacks: 0
   cardTitle: Card Title

@@ -42,7 +42,7 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         pgm = GameObject.Find("PersistentGameManager");
-        player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
+        //player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
         playerDeck.SetupFromList(player.currentDeck);
 
         enemy.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);//TODO ENEMY MANAGER
