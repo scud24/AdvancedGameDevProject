@@ -34,10 +34,14 @@ public class CombatManager : MonoBehaviour
     public GameObject startButton;
     public GameObject playerTurnButton;
 
+
+    public List<GameObject> enemies;
     public Animator playerAnimator;
     public Animator enemyAnimator;
 
     public GameObject pgm;
+    public GameObject instanceManager;
+    public GameObject enemyManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +49,10 @@ public class CombatManager : MonoBehaviour
         player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
         playerDeck.SetupFromList(player.currentDeck);
 
-        enemy.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);//TODO ENEMY MANAGER
+
+        instanceManager = GameObject.Find("InstanceManager");
+        enemyManager = GameObject.Find("EnemyManager");
+        enemy.SetupFromPlayerData(enemyManager.GetComponent<EnemyManager>().enemyList[instanceManager.GetComponent<InstanceManager>().enemyIndex]);//TODO ENEMY MANAGER
         enemyDeck.SetupFromList(player.currentDeck);
         Debug.Log(playerDeck.Count());
         Debug.Log(enemyDeck.Count());
