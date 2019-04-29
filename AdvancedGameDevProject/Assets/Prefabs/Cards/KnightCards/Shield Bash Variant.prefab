@@ -102,5 +102,10 @@ PrefabInstance:
       propertyPath: numAttacks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
+        type: 3}
+      propertyPath: attackAnimation
+      value: Shield_Bash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917dea5ead154424daa182097403cd17, type: 3}

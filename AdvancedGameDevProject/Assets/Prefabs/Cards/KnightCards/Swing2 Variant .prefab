@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5873512384734372428, guid: 56ca664b10baef247a32d486e4da148e,
         type: 3}
       propertyPath: m_Name
-      value: Swing Variant
+      value: 'Swing2 Variant '
       objectReference: {fileID: 0}
     - target: {fileID: 3382083818087770280, guid: 56ca664b10baef247a32d486e4da148e,
         type: 3}
@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 1518782053867242458, guid: 56ca664b10baef247a32d486e4da148e,
         type: 3}
       propertyPath: attackAnimation
-      value: basic_attack
+      value: Swing2
       objectReference: {fileID: 0}
     - target: {fileID: 1518782053867242458, guid: 56ca664b10baef247a32d486e4da148e,
         type: 3}
