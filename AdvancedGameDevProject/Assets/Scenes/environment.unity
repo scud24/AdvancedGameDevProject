@@ -688,7 +688,7 @@ Mesh:
   m_VertexData:
     serializedVersion: 3
 
-    m_VertexCount: 1164
+    m_VertexCount: 1165
     m_Channels:
     - stream: 0
       offset: 0
