@@ -92,5 +92,10 @@ PrefabInstance:
       propertyPath: cardColor.r
       value: 0.9891446
       objectReference: {fileID: 0}
+    - target: {fileID: 2128756196930690058, guid: 975495095de06664584fede7e888afdd,
+        type: 3}
+      propertyPath: attackAnimation
+      value: Shieldblock_FullImpact
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 975495095de06664584fede7e888afdd, type: 3}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7781245113243449234
+--- !u!1001 &6097333194266289317
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,27 +10,22 @@ PrefabInstance:
     - target: {fileID: 5002192757160419395, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: m_Name
-      value: Execute Strike Variant
+      value: Block Variant
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
-      propertyPath: cardTitle
-      value: Execute Strike
+      propertyPath: defenceBonus
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
-      propertyPath: attackPower
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: numAttacks
+      propertyPath: NumDefends
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: attackAnimation
-      value: Execute_Strike
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 4181065562691005095, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}

@@ -52,6 +52,11 @@ PrefabInstance:
       propertyPath: numAttacks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: attackAnimation
+      value: Flail
+      objectReference: {fileID: 0}
     - target: {fileID: 4181065562691005095, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: m_LocalPosition.x

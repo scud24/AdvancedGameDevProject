@@ -97,5 +97,10 @@ PrefabInstance:
       propertyPath: NumDefends
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6220308979049868078, guid: e34f6d90d90e7854084a55fc0a12b332,
+        type: 3}
+      propertyPath: attackAnimation
+      value: Reckless_swing
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}
