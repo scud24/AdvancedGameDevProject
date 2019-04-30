@@ -9,5 +9,5 @@ public class PlayerData : MonoBehaviour
     public int maxHealth;
     public int defence;
     public int defenceBonus;
-    
+    public int gold = 10000;
 }

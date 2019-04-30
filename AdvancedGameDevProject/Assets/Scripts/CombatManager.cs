@@ -61,7 +61,7 @@ public class CombatManager : MonoBehaviour
         enemy.SetupFromPlayerData(enemyManager.GetComponent<EnemyManager>().enemyList[instanceManager.GetComponent<InstanceManager>().enemyIndex]);//TODO ENEMY MANAGER
 
         Debug.Log("enemy deck set");
-        enemyDeck.SetupFromList(player.currentDeck);
+        enemyDeck.SetupFromList(enemy.currentDeck);
         Debug.Log(playerDeck.Count());
         Debug.Log(enemyDeck.Count());
 
