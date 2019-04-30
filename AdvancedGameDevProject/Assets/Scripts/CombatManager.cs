@@ -15,6 +15,7 @@ public class CombatManager : MonoBehaviour
     public GameObject playerHandUI1;
     public GameObject playerHandUI2;
     public GameObject playerHandUI3;
+    public List<GameObject> playerHearts;
 
     public PlayerManagerScript enemy;
     public DeckManagerScript enemyDeck;
@@ -23,6 +24,7 @@ public class CombatManager : MonoBehaviour
     public GameObject enemyCurrentCardUI;
     public List<CardData> enemyDiscard;
     public GameObject enemyDiscardUI;
+    public List<GameObject> enemyHearts;
 
     public List<GameObject> dummyCards;
     public float MAX_TURN_END_WAIT;
