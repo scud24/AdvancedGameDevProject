@@ -44,6 +44,7 @@ public class CombatManager : MonoBehaviour
     public GameObject pgm;
     public GameObject instanceManager;
     public GameObject enemyManager;
+    public List<Sprite> heartSprites;
     // Start is called before the first frame update
     void Start()
     {
@@ -179,7 +180,36 @@ public class CombatManager : MonoBehaviour
 
         enemy.DamagePlayer(pAttack - eDefenceBonus);
         player.DamagePlayer(eAttack - pDefenceBonus);
+        Debug.Log("Player: " + player.currentHealth  + " Enemy: " + enemy.currentHealth );
+        for (int i = 0; i <= 4; i++)
+        {
+            Debug.Log("Player: " + player.currentHealth / 4.0f + " Enemy: " + enemy.currentHealth / 4.0f + " i: " + i);
+            if ((player.currentHealth/ 4.0f) < i+1)
+            {
+                playerHearts[i].GetComponent<Image>().sprite = heartSprites[0];
+            }
+            else if((player.currentHealth/4.0f)>i+1)
+            {
+                playerHearts[i].GetComponent<Image>().sprite = heartSprites[4];
+            }
+            else
+            {
+                playerHearts[i].GetComponent<Image>().sprite = heartSprites[i];
+            }
 
+            if ((enemy.currentHealth / 4.0f) < i+1)
+            {
+                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[0];
+            }
+            else if ((enemy.currentHealth / 4.0f) > i+1)
+            {
+                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[4];
+            }
+            else
+            {
+                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[i];
+            }
+        }
 
         if (enemyCurrentCard != null) {
             //enemyCurrentCard.transform.localPosition = enemyDiscardPos;
@@ -198,8 +228,24 @@ public class CombatManager : MonoBehaviour
             playerDiscardUI.SetActive(true);
             playerCurrentCardUI.SetActive(false);
         }
-
-
+        if(playerDeck.Count() <= 0)
+        {
+            while(playerDiscard.Count > 0)
+            {
+                playerDeck.addCard(playerDiscard[0]);
+                playerDiscard.RemoveAt(0);
+            }
+            playerDeck.shuffle();
+        }
+        if (enemyDeck.Count() <= 0)
+        {
+            while (enemyDiscard.Count > 0)
+            {
+                enemyDeck.addCard(enemyDiscard[0]);
+                enemyDiscard.RemoveAt(0);
+            }
+            enemyDeck.shuffle();
+        }
         EnemyDraw();
     }
 

@@ -18,6 +18,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void DamagePlayer(int damageAmount)
     {
+        if(damageAmount < 0)
+        {
+            damageAmount = 0;
+        }
         currentHealth -= damageAmount;
         if (currentHealth <= 0)
         {
@@ -27,6 +31,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void HealPlayer(int healAmount)
     {
+        if (healAmount < 0)
+        {
+            healAmount = 0;
+        }
         currentHealth += healAmount;
         if(currentHealth > maxHealth)
         {
