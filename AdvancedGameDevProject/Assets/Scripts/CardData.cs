@@ -6,6 +6,7 @@ public class CardData : MonoBehaviour
 { 
     public int manaCost;
     public int defenceBonus; //if applicable
+    public int NumDefends;
     public int attackPower;
     public int numAttacks;
     public string cardTitle;
