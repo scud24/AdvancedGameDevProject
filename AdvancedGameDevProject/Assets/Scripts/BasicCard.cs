@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class BasicCard : MonoBehaviour
 {
-    public Text ManaCostText;
     public Text bonusStatsText;
     public Text AttackPowerText;
     public Text TitleText;
@@ -46,7 +45,6 @@ public class BasicCard : MonoBehaviour
     {
         //Debug.Log(cardData.cardTitle);
         //Debug.Log(cardData.attackPower);
-        ManaCostText.text = cardData.manaCost.ToString();
         bonusStatsText.text = cardData.defenceBonus.ToString();
         AttackPowerText.text = cardData.attackPower.ToString();
 
