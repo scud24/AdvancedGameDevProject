@@ -10,7 +10,17 @@ PrefabInstance:
     - target: {fileID: 2450166144036613951, guid: 168c460e5a8cf0347ac55af898b0ebd0,
         type: 3}
       propertyPath: m_Name
-      value: Quick Attack Variant
+      value: Quick Attack Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390857232083078825, guid: 168c460e5a8cf0347ac55af898b0ebd0,
+        type: 3}
+      propertyPath: numAttacks
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390857232083078825, guid: 168c460e5a8cf0347ac55af898b0ebd0,
+        type: 3}
+      propertyPath: cardTitle
+      value: Quick Attack+
       objectReference: {fileID: 0}
     - target: {fileID: 6732254811849844187, guid: 168c460e5a8cf0347ac55af898b0ebd0,
         type: 3}
@@ -66,11 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7390857232083078825, guid: 168c460e5a8cf0347ac55af898b0ebd0,
-        type: 3}
-      propertyPath: numAttacks
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c460e5a8cf0347ac55af898b0ebd0, type: 3}

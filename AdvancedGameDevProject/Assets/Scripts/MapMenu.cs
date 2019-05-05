@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapMenu : MonoBehaviour
 {
@@ -18,22 +19,22 @@ public class MapMenu : MonoBehaviour
 
     //Dungeon, Inventory, Shop, Save & Quit
 
-    public void Dungeon(string a) {
-        Debug.Log(a);
+    public void Dungeon1() {
+        SceneManager.LoadScene(sceneName: "UndergroundDungeon");
     }
 
-    public void Inventory(string a)
+    public void Inventory()
     {
-        Debug.Log(a);
+        SceneManager.LoadScene(sceneName: "Inventory Menu");
     }
 
-    public void Shop(string a)
+    public void Shop()
     {
-        Debug.Log(a);
+        SceneManager.LoadScene(sceneName: "ShopMenu");
     }
 
-    public void SaveQuit(string a)
+    public void SaveQuit()
     {
-        Debug.Log(a);
+        SceneManager.LoadScene(sceneName: "MainMenu");
     }
 }

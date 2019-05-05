@@ -10,12 +10,17 @@ PrefabInstance:
     - target: {fileID: 8046169986148283773, guid: 222564e5daf57e34a921940475f81a84,
         type: 3}
       propertyPath: m_Name
-      value: Dodge Variant Upgrade
+      value: Dodge Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3114406985132070123, guid: 222564e5daf57e34a921940475f81a84,
         type: 3}
       propertyPath: NumDefends
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114406985132070123, guid: 222564e5daf57e34a921940475f81a84,
+        type: 3}
+      propertyPath: cardTitle
+      value: Dodge+
       objectReference: {fileID: 0}
     - target: {fileID: 1208310285883146137, guid: 222564e5daf57e34a921940475f81a84,
         type: 3}

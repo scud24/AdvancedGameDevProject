@@ -10,7 +10,17 @@ PrefabInstance:
     - target: {fileID: 1352168754519034552, guid: e34f6d90d90e7854084a55fc0a12b332,
         type: 3}
       propertyPath: m_Name
-      value: Full Guard Variant
+      value: Full Guard Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220308979049868078, guid: e34f6d90d90e7854084a55fc0a12b332,
+        type: 3}
+      propertyPath: defenceBonus
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220308979049868078, guid: e34f6d90d90e7854084a55fc0a12b332,
+        type: 3}
+      propertyPath: cardTitle
+      value: Full Guard+
       objectReference: {fileID: 0}
     - target: {fileID: 7903436245990735964, guid: e34f6d90d90e7854084a55fc0a12b332,
         type: 3}
@@ -66,11 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220308979049868078, guid: e34f6d90d90e7854084a55fc0a12b332,
-        type: 3}
-      propertyPath: defenceBonus
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}

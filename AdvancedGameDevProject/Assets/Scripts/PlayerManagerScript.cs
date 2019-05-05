@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerManagerScript : MonoBehaviour
 {
     public List<CardData> currentDeck;
+    public List<CardData> currentInventory;
     public int currentHealth;
     public int maxHealth;
     public int defence;
@@ -54,5 +55,6 @@ public class PlayerManagerScript : MonoBehaviour
         defence = pd.defence;
         defenceBonus = pd.defenceBonus;
         currentDeck = pd.currrentDeck;
+        currentInventory = pd.cardInventory;
     }
 }

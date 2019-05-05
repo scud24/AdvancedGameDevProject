@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InventoryMenu : MonoBehaviour
 {
@@ -47,5 +48,9 @@ public class InventoryMenu : MonoBehaviour
         });
 
         itemIndex++;
+    }
+    public void exitToMenu() {
+        SceneManager.LoadScene(sceneName: "Map Menu");
+
     }
 }

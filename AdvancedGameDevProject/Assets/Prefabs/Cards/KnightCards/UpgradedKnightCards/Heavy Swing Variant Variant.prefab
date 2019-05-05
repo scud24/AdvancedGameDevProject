@@ -10,7 +10,17 @@ PrefabInstance:
     - target: {fileID: 3098410639147922836, guid: adf1c30816ddaab4b90af9566ae0fb94,
         type: 3}
       propertyPath: m_Name
-      value: Heavy Swing Variant
+      value: Heavy Swing Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957544231361188866, guid: adf1c30816ddaab4b90af9566ae0fb94,
+        type: 3}
+      propertyPath: attackPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957544231361188866, guid: adf1c30816ddaab4b90af9566ae0fb94,
+        type: 3}
+      propertyPath: cardTitle
+      value: Heavy Swing+
       objectReference: {fileID: 0}
     - target: {fileID: 6166201096205713264, guid: adf1c30816ddaab4b90af9566ae0fb94,
         type: 3}
@@ -66,11 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7957544231361188866, guid: adf1c30816ddaab4b90af9566ae0fb94,
-        type: 3}
-      propertyPath: attackPower
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf1c30816ddaab4b90af9566ae0fb94, type: 3}

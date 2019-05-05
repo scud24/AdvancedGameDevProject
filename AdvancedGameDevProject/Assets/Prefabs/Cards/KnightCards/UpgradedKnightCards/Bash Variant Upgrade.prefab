@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: defenceBonus
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695,
+        type: 3}
+      propertyPath: cardTitle
+      value: Bash+
+      objectReference: {fileID: 0}
     - target: {fileID: 1401092554881669588, guid: 271bc3be0cc986b41ba80f59026a4695,
         type: 3}
       propertyPath: m_LocalPosition.x

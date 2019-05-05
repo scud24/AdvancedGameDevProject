@@ -10,7 +10,22 @@ PrefabInstance:
     - target: {fileID: 8877931082633211026, guid: 917dea5ead154424daa182097403cd17,
         type: 3}
       propertyPath: m_Name
-      value: Reckless Swing Variant
+      value: Reckless Swing Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
+        type: 3}
+      propertyPath: attackPower
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
+        type: 3}
+      propertyPath: defenceBonus
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
+        type: 3}
+      propertyPath: cardTitle
+      value: Reckless Swing+
       objectReference: {fileID: 0}
     - target: {fileID: 313497690271164022, guid: 917dea5ead154424daa182097403cd17,
         type: 3}
@@ -66,16 +81,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
-        type: 3}
-      propertyPath: attackPower
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586242316096605444, guid: 917dea5ead154424daa182097403cd17,
-        type: 3}
-      propertyPath: defenceBonus
-      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917dea5ead154424daa182097403cd17, type: 3}

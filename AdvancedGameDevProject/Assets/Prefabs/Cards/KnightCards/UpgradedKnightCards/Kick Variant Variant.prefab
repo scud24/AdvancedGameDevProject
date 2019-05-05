@@ -10,7 +10,17 @@ PrefabInstance:
     - target: {fileID: 7041457555788484588, guid: 6bff085c43f30ab4799ae6818b9c8775,
         type: 3}
       propertyPath: m_Name
-      value: Kick Variant
+      value: Kick Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677790238718209658, guid: 6bff085c43f30ab4799ae6818b9c8775,
+        type: 3}
+      propertyPath: attackPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677790238718209658, guid: 6bff085c43f30ab4799ae6818b9c8775,
+        type: 3}
+      propertyPath: cardTitle
+      value: Kick+
       objectReference: {fileID: 0}
     - target: {fileID: 2221738494483989768, guid: 6bff085c43f30ab4799ae6818b9c8775,
         type: 3}
@@ -66,11 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2677790238718209658, guid: 6bff085c43f30ab4799ae6818b9c8775,
-        type: 3}
-      propertyPath: attackPower
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bff085c43f30ab4799ae6818b9c8775, type: 3}
