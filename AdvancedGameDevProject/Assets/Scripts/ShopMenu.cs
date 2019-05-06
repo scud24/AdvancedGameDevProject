@@ -15,6 +15,7 @@ public class ShopMenu : MonoBehaviour {
     public GameObject SpecialCard3;
     public List<BasicCard> PackCardsUI;
     public GameObject CardPackDisplayPanel;
+    public Text PlayerGoldLabel;
 
     void Start() {
         pgm = GameObject.Find("PersistentGameManager");
@@ -25,7 +26,7 @@ public class ShopMenu : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        PlayerGoldLabel.text = "Gold: " + pgm.GetComponent<PersistentGameManager>().playerData.gold.ToString();
     }
     public void addPackToDeck(List<CardData> cardPack) {
 
@@ -137,6 +138,8 @@ public class ShopMenu : MonoBehaviour {
         }
         CardPackDisplayPanel.SetActive(false);
     }
+
+
 
 
 }
