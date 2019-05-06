@@ -53,6 +53,6 @@ public class PlayerManagerScript : MonoBehaviour
         currentHealth = maxHealth;
         defence = pd.defence;
         defenceBonus = pd.defenceBonus;
-        currentDeck = pd.currentDeck;
+        currentDeck = pd.currrentDeck;
     }
 }

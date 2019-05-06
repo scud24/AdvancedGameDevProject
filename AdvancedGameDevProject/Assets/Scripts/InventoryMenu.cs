@@ -16,7 +16,7 @@ public class InventoryMenu : MonoBehaviour
     void Start(){
         pgm = GameObject.Find("PersistentGameManager").GetComponent<PersistentGameManager>();
         items = new List<GameObject>();
-        for(int i = 0; i < pgm.playerData.currentDeck.Count; i++)
+        for(int i = 0; i < pgm.playerData.currrentDeck.Count; i++)
         {
             int value = itemIndex + 1;
             // Create new item
@@ -29,7 +29,7 @@ public class InventoryMenu : MonoBehaviour
             item.transform.localScale = Vector3.one;
 
             //Add samle text to button's text 
-            item.GetComponentInChildren<Text>().text = pgm.playerData.currentDeck[i].cardTitle;
+            item.GetComponentInChildren<Text>().text = pgm.playerData.currrentDeck[i].cardTitle;
 
             //Add onClick listener to each item
             item.GetComponent<Button>().onClick.AddListener(() =>
