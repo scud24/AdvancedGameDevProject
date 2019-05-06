@@ -43,8 +43,6 @@ public class BasicCard : MonoBehaviour
     //Set up a card's UI elements after filling its values from the main set of card data
     public void SetupUI()
     {
-        //Debug.Log(cardData.cardTitle);
-        //Debug.Log(cardData.attackPower);
         bonusStatsText.text = cardData.defenceBonus.ToString();
         AttackPowerText.text = cardData.attackPower.ToString();
 
@@ -54,7 +52,6 @@ public class BasicCard : MonoBehaviour
     }
     public void SetCardData(CardData cd)
     {
-        //Debug.Log(cd);
         cardData = cd;
     }
 

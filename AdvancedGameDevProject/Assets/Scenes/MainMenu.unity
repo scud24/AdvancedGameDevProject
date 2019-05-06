@@ -1206,13 +1206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ff4b7c38ab46b4c8f11ac7637bf753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDeck:
+  currrentDeck:
   - {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695, type: 3}
-  - {fileID: 7555820354188545849, guid: fd110eb6f864cf147a8b222a78e8b751, type: 3}
-  - {fileID: 3114406985132070123, guid: 222564e5daf57e34a921940475f81a84, type: 3}
   - {fileID: 7957544231361188866, guid: adf1c30816ddaab4b90af9566ae0fb94, type: 3}
-  - {fileID: 679644695088655776, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
-  - {fileID: 679644695088655776, guid: 73428e2ee9c218c45adf6b11c2cecf9e, type: 3}
   cardInventory:
   - {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695, type: 3}
   - {fileID: 7555820354188545849, guid: fd110eb6f864cf147a8b222a78e8b751, type: 3}
@@ -1230,6 +1226,7 @@ MonoBehaviour:
   maxHealth: 0
   defence: 0
   defenceBonus: 0
+  gold: 10000
 --- !u!4 &1228188750
 Transform:
   m_ObjectHideFlags: 0

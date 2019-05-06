@@ -13,13 +13,13 @@ public class ShopMenu : MonoBehaviour {
     public GameObject SpecialCard1;
     public GameObject SpecialCard2;
     public GameObject SpecialCard3;
-
-
+    public List<BasicCard> PackCardsUI;
+    public GameObject CardPackDisplayPanel;
 
     void Start() {
-        pgm = GameObject.Find("PersistantGameManager");
+        pgm = GameObject.Find("PersistentGameManager");
         playerInv = pgm.GetComponent<PersistentGameManager>().playerData.cardInventory;
-        resetSpecialCards(); //should move this to PersistantGameManager to only activate on first load and on dungeon clears
+        resetSpecialCards(); //should move this to PersistentGameManager to only activate on first load and on dungeon clears
 
     }
 
@@ -27,9 +27,9 @@ public class ShopMenu : MonoBehaviour {
     void Update() {
 
     }
-    public void addPackToDeck(CardData[] cardPack) {
+    public void addPackToDeck(List<CardData> cardPack) {
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < cardPack.Count; i++) {
             playerInv.Add(cardPack[i]);
         }
     }
@@ -37,8 +37,9 @@ public class ShopMenu : MonoBehaviour {
     public void buyPack() {
         if (pgm.GetComponent<PersistentGameManager>().playerData.gold >= 50) {
             pgm.GetComponent<PersistentGameManager>().playerData.gold -= 50;
-            CardData[] pack = packTable.rollCardPack();
+            List<CardData> pack = packTable.rollCardPack();
             addPackToDeck(pack);
+            DisplayCardPack(pack);
         }
         else {
             Debug.Log("Not enough gold");
@@ -49,7 +50,7 @@ public class ShopMenu : MonoBehaviour {
         if (pgm.GetComponent<PersistentGameManager>().playerData.gold >= 150) {
             pgm.GetComponent<PersistentGameManager>().playerData.gold -= 150;
             for (int i = 0; i < 3; i++) {
-                CardData[] pack = packTable.rollCardPack();
+                List<CardData> pack = packTable.rollCardPack();
                 addPackToDeck(pack);
             }
         }
@@ -63,6 +64,9 @@ public class ShopMenu : MonoBehaviour {
         if (pgm.GetComponent<PersistentGameManager>().playerData.gold >= 50) {
             pgm.GetComponent<PersistentGameManager>().playerData.gold -= 50;
             playerInv.Add(card.cardData);
+            List<CardData> pack = new List<CardData>();
+            pack.Add(card.cardData);
+            DisplayCardPack(pack);
             card.GetComponentInChildren<Button>().interactable = false;
         }
         else {
@@ -74,8 +78,9 @@ public class ShopMenu : MonoBehaviour {
     public void buySpecialPack() {
         if (pgm.GetComponent<PersistentGameManager>().playerData.gold >= 50) {
             pgm.GetComponent<PersistentGameManager>().playerData.gold -= 50;
-            CardData[] pack = packTable.rollSpecialCardPack();
+            List<CardData> pack = packTable.rollSpecialCardPack();
             addPackToDeck(pack);
+            DisplayCardPack(pack);
         }
         else {
             Debug.Log("Not enough gold");
@@ -104,6 +109,33 @@ public class ShopMenu : MonoBehaviour {
     public void exitToMenu() {
         SceneManager.LoadScene(sceneName: "Map Menu");
 
+    }
+
+    public void DisplayCardPack(List<CardData> pack)
+    {
+        int max = 5; //UI only currently set up to show at most 5 cards atm
+        if(pack.Count < 5)
+        {
+            max = pack.Count;
+        }
+        for(int i = 0; i < max; i++)
+        {
+            PackCardsUI[i].SetCardData(pack[i]);
+            PackCardsUI[i].SetupUI();
+            PackCardsUI[i].gameObject.SetActive(true);
+        }
+        CardPackDisplayPanel.SetActive(true);
+    }
+
+    public void HideCardPackPanel()
+    {
+        int max = 5; //UI only currently set up to show at most 5 cards atm
+        
+        for (int i = 0; i < max; i++)
+        {
+            PackCardsUI[i].gameObject.SetActive(false);
+        }
+        CardPackDisplayPanel.SetActive(false);
     }
 
 

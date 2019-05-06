@@ -48,7 +48,7 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pgm = GameObject.Find("PersistantGameManager");
+        pgm = GameObject.Find("PersistentGameManager");
         Debug.Log("Player set");
         player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
         Debug.Log("Player deck set");
