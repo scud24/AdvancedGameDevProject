@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -18,11 +19,13 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame(string data) {
         Debug.Log("New Game Button Clicked");
+        SceneManager.LoadScene("Map Menu");
     }
 
     public void LoadGame(string data)
     {
         Debug.Log("Load Game Button Clicked");
+        SceneManager.LoadScene("Map Menu");
     }
 
     public void Controls(string data)
@@ -33,5 +36,6 @@ public class MainMenu : MonoBehaviour
     public void QuitGame(string data)
     {
         Debug.Log("Quit Game Button Clicked");
+        Application.Quit();
     }
 }

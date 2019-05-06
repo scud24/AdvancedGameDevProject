@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,6 +95,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -244,6 +252,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -262,6 +275,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 38467297}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &38467299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 38467297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &45075205
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +293,6 @@ GameObject:
   - component: {fileID: 45075209}
   - component: {fileID: 45075208}
   - component: {fileID: 45075207}
-  - component: {fileID: 45075210}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -325,24 +343,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 45075208}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 45075210}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -392,20 +413,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45075205}
   m_CullTransparentMesh: 0
---- !u!114 &45075210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45075205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1 &198085326
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,9 +451,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -554,6 +562,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!114 &328045744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +733,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -735,6 +750,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
+--- !u!1 &416264872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 416264871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &530875705 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
@@ -952,6 +973,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -964,6 +990,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
+--- !u!1 &586327671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 586327670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598873183
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +1008,6 @@ GameObject:
   - component: {fileID: 598873187}
   - component: {fileID: 598873186}
   - component: {fileID: 598873185}
-  - component: {fileID: 598873188}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -1027,24 +1058,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 598873186}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598873188}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -1094,20 +1128,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598873183}
   m_CullTransparentMesh: 0
---- !u!114 &598873188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598873183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1 &716199328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1419,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1414,6 +1439,12 @@ PrefabInstance:
 --- !u!224 &875045672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 875045671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &875045673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
     type: 3}
   m_PrefabInstance: {fileID: 875045671}
   m_PrefabAsset: {fileID: 0}
@@ -1668,7 +1699,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 1005365679}
   m_HorizontalScrollbar: {fileID: 2033319075}
   m_VerticalScrollbar: {fileID: 1075250275}
@@ -2126,23 +2157,26 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 987869233}
   m_HandleRect: {fileID: 987869232}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2276,8 +2310,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 0}
-  content: {fileID: 0}
+  CardUIObjects:
+  - {fileID: 586327671}
+  - {fileID: 875045673}
+  - {fileID: 2038918793}
+  - {fileID: 1271556400}
+  - {fileID: 38467299}
+  - {fileID: 1395362366}
+  - {fileID: 1345528563}
+  - {fileID: 416264872}
+  - {fileID: 1194829876}
+  - {fileID: 2057912207}
+  itemTemplate: {fileID: 1912897639}
+  content: {fileID: 1613311342}
 --- !u!1 &1155013492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,7 +2335,6 @@ GameObject:
   - component: {fileID: 1155013496}
   - component: {fileID: 1155013495}
   - component: {fileID: 1155013494}
-  - component: {fileID: 1155013497}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -2341,24 +2385,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1155013495}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1155013497}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -2408,20 +2455,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155013492}
   m_CullTransparentMesh: 0
---- !u!114 &1155013497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155013492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1 &1179215998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,6 +2666,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2645,6 +2683,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
+--- !u!1 &1194829876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1194829875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1201297312 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
@@ -3015,6 +3059,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3030,6 +3079,12 @@ PrefabInstance:
 --- !u!224 &1271556399 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1271556398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1271556400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
     type: 3}
   m_PrefabInstance: {fileID: 1271556398}
   m_PrefabAsset: {fileID: 0}
@@ -3136,6 +3191,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &1318495630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,7 +3205,6 @@ GameObject:
   - component: {fileID: 1318495634}
   - component: {fileID: 1318495633}
   - component: {fileID: 1318495632}
-  - component: {fileID: 1318495635}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -3199,24 +3255,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1318495633}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318495635}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -3266,20 +3325,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318495630}
   m_CullTransparentMesh: 0
---- !u!114 &1318495635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318495630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1 &1319692777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,7 +3337,6 @@ GameObject:
   - component: {fileID: 1319692781}
   - component: {fileID: 1319692780}
   - component: {fileID: 1319692779}
-  - component: {fileID: 1319692782}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -3343,24 +3387,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1319692780}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1319692782}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -3410,20 +3457,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319692777}
   m_CullTransparentMesh: 0
---- !u!114 &1319692782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319692777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1001 &1345528562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3556,6 +3589,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3568,6 +3606,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
+--- !u!1 &1345528563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1345528562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1345769963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3624,6 @@ GameObject:
   - component: {fileID: 1345769967}
   - component: {fileID: 1345769966}
   - component: {fileID: 1345769965}
-  - component: {fileID: 1345769968}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -3631,24 +3674,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1345769966}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1345769968}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -3698,20 +3744,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345769963}
   m_CullTransparentMesh: 0
---- !u!114 &1345769968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345769963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1 &1351259840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,6 +3976,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3956,6 +3993,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
+--- !u!1 &1395362366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1395362365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454221902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4062,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!114 &1454221905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4081,12 +4126,13 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456733414}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -4096,6 +4142,24 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -4103,12 +4167,15 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1456733416
@@ -4137,7 +4204,6 @@ GameObject:
   - component: {fileID: 1467519251}
   - component: {fileID: 1467519250}
   - component: {fileID: 1467519249}
-  - component: {fileID: 1467519252}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -4188,24 +4254,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1467519250}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1467519252}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -4255,20 +4324,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467519247}
   m_CullTransparentMesh: 0
---- !u!114 &1467519252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467519247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!224 &1468460620 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
@@ -4287,7 +4342,6 @@ GameObject:
   - component: {fileID: 1476173657}
   - component: {fileID: 1476173656}
   - component: {fileID: 1476173655}
-  - component: {fileID: 1476173658}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -4338,24 +4392,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1476173656}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1476173658}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -4405,20 +4462,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476173653}
   m_CullTransparentMesh: 0
---- !u!114 &1476173658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476173653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!1 &1613311342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,6 +4536,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &1617506137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,7 +4627,6 @@ GameObject:
   - component: {fileID: 1703085082}
   - component: {fileID: 1703085081}
   - component: {fileID: 1703085080}
-  - component: {fileID: 1703085083}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -4633,24 +4677,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1703085081}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1703085083}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -4700,20 +4747,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703085078}
   m_CullTransparentMesh: 0
---- !u!114 &1703085083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703085078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}
 --- !u!224 &1845310523 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
@@ -5020,17 +5053,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1912897642}
@@ -5240,24 +5276,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2083613815}
   m_HandleRect: {fileID: 2083613814}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5433,6 +5472,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5448,6 +5492,12 @@ PrefabInstance:
 --- !u!224 &2038918792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2795916231954167682, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2038918791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2038918793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
     type: 3}
   m_PrefabInstance: {fileID: 2038918791}
   m_PrefabAsset: {fileID: 0}
@@ -5668,6 +5718,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7199650845693240006, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231527067816, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5680,6 +5735,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
+--- !u!1 &2057912207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2057912206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2083613813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,7 +5827,6 @@ GameObject:
   - component: {fileID: 2128698689}
   - component: {fileID: 2128698688}
   - component: {fileID: 2128698687}
-  - component: {fileID: 2128698690}
   m_Layer: 5
   m_Name: AddtoDeckBtn
   m_TagString: Untagged
@@ -5817,24 +5877,27 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2128698688}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2128698690}
+      - m_Target: {fileID: 1129367955}
         m_MethodName: AddToDeck
         m_Mode: 3
         m_Arguments:
@@ -5884,17 +5947,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128698685}
   m_CullTransparentMesh: 0
---- !u!114 &2128698690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128698685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab17f08d616472381bf9b9b1b663a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemTemplate: {fileID: 1912897639}
-  content: {fileID: 1613311342}

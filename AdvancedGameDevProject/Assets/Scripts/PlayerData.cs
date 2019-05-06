@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public List<CardData> currrentDeck;
+    public List<CardData> currentDeck;
     public List<CardData> cardInventory;
     public int maxHealth;
     public int defence;

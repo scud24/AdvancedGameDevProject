@@ -19,6 +19,22 @@ public class PersistentGameManager : MonoBehaviour
     public PlayerData playerData;
     public List<CardData> globalPlayerCardList;
     public int playerGold;
+
+    static bool created = false;
+    void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(playerData.gameObject);
+            created = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
