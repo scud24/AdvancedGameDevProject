@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8040226882788513239
+--- !u!1001 &1106084394290256822
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,17 @@ PrefabInstance:
     - target: {fileID: 5002192757160419395, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: m_Name
-      value: Heavy Swing Variant
+      value: Ground Slam Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: cardTitle
+      value: Ground Slam
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: attackPower
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
@@ -25,12 +30,7 @@ PrefabInstance:
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: attackAnimation
-      value: Heavy_Swing
-      objectReference: {fileID: 0}
-    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
-        type: 3}
-      propertyPath: cardTitle
-      value: Heavy Swing
+      value: Ground_Slam
       objectReference: {fileID: 0}
     - target: {fileID: 4181065562691005095, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
