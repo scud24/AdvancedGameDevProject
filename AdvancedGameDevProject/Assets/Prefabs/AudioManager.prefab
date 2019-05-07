@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5459265090310450565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5459265090310450563}
+  - component: {fileID: 5459265090310450562}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5459265090310450563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5459265090310450565}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5459265090310450562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5459265090310450565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e9ab64573744cb68c18c4c989368fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: MenuSound
+    clip: {fileID: 8300000, guid: b6457c24c7d7c4040869241919fd6d3d, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 1
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: ddf98027ea12d894c9990d4098e7c7ec, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 1
+  - name: Combat
+    clip: {fileID: 8300000, guid: 4200f4ad7b88a5e44bc427c1ee6c0b51, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinAttack1
+    clip: {fileID: 8300000, guid: 1d3ce892e27384bd2b9edfe2dfec5789, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinAttack2
+    clip: {fileID: 8300000, guid: 1094fbf3cc313476984cc7fc0a4546ef, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinAttack3
+    clip: {fileID: 8300000, guid: fb460fb243a77466a9702f5655b07b9f, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinDie1
+    clip: {fileID: 8300000, guid: 79c7e6438f53d4e40a98fdab64d943dc, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinDie2
+    clip: {fileID: 8300000, guid: a5e9258370c254b3c9fcc430c66b2c7b, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinDie3
+    clip: {fileID: 8300000, guid: d7fa55fec03174df4bf7660458725b67, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinPain1
+    clip: {fileID: 8300000, guid: 8131f3a2f723247de81af1292efd7a7d, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinPain2
+    clip: {fileID: 8300000, guid: e77b0ae55c5794372952a315c319c46a, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinPain3
+    clip: {fileID: 8300000, guid: 27292d3d3d56142d7bc31c2e8311497f, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinRoar1
+    clip: {fileID: 8300000, guid: 644f58d86a7e844bbbe222da2ac8c336, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinRoar2
+    clip: {fileID: 8300000, guid: bc4c2a159f0a54c848b39ae83f50bbf8, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: GoblinRoar3
+    clip: {fileID: 8300000, guid: e77848cfc843c47fea2a00d6937acb12, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: ZombieAttack1
+    clip: {fileID: 8300000, guid: 5ce6bb262e363834db2b5cdef8a21155, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: ZombieAttack2
+    clip: {fileID: 8300000, guid: 24b617db03a924c4ab49c13feb18c10d, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: ZombieAttack3
+    clip: {fileID: 8300000, guid: 8b9826c915109c446be0c38d54721a2d, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: ZombieAngry1
+    clip: {fileID: 8300000, guid: 27b98a8c68f991b408c5c6afff25358c, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: ZombieAngry2
+    clip: {fileID: 8300000, guid: 1fb023a333ca93a40a9c968a37e6f739, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: ZombieAngry3
+    clip: {fileID: 8300000, guid: efc7bb9783bdf8a4797f4caae38bea34, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadAttack1
+    clip: {fileID: 8300000, guid: b6b32eb8d5c8e45148c85d5764949730, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadAttack2
+    clip: {fileID: 8300000, guid: 5754ecc8dabb944f09b207e0a7fca341, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadAttack3
+    clip: {fileID: 8300000, guid: 2d76dc8e19749463bbe4024818fbc96e, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadDeath
+    clip: {fileID: 8300000, guid: cd8ca3b7804724bdeac39433cf57cacd, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadRoar1
+    clip: {fileID: 8300000, guid: 18869a991e9c14de5a985a4693e36842, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadRoar2
+    clip: {fileID: 8300000, guid: ebcaa0d8a7c7b48308459a94d6089a83, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: UndeadRoar3
+    clip: {fileID: 8300000, guid: 88b2a198f9d7e4886952278c5fd992cd, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: BattleTheme1
+    clip: {fileID: 8300000, guid: 20dbbb9f727fd754cba409a193eb99c3, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: BattleTheme2
+    clip: {fileID: 8300000, guid: 4200f4ad7b88a5e44bc427c1ee6c0b51, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: BattleTheme3
+    clip: {fileID: 8300000, guid: dadaa2bc8215b12469a4f7d18e5647df, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: BattleTheme4
+    clip: {fileID: 8300000, guid: 1b197323357862a44b90b0f13b8f26d0, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: BattleTheme5
+    clip: {fileID: 8300000, guid: b8dac465e64567948b9569336937bfe9, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: BattleTheme6
+    clip: {fileID: 8300000, guid: e6203b2c85de4c240a42967822e0bd71, type: 3}
+    volume: 0.8
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
