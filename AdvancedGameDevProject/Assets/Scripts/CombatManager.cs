@@ -165,7 +165,8 @@ public class CombatManager : MonoBehaviour
 
     public void StartCombat()
     {
-        FindObjectOfType<AudioManager>().Play("Combat");
+        //FindObjectOfType<AudioManager>().StopSounds();
+        FindObjectOfType<AudioManager>().PlayMusic(1);
         Debug.Log("enemy turn");
         startButton.GetComponent<Button>().interactable = false;
         playerTurnButton.GetComponent<Button>().interactable = true;

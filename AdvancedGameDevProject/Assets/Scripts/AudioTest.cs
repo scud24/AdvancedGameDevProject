@@ -16,8 +16,8 @@ public class AudioTest : MonoBehaviour
         
     }
 
-    public void Play(string name)
+    public void Play(int trackIndex)
     {
-        FindObjectOfType<AudioManager>().Play(name);
+        FindObjectOfType<AudioManager>().Play(trackIndex);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InventoryMenu : MonoBehaviour
@@ -89,8 +90,8 @@ public class InventoryMenu : MonoBehaviour
             pgm.playerData.currrentDeck.Add(pgm.playerData.cardInventory[cardID]);
             pgm.playerData.cardInventory.RemoveAt(cardID);
 
-            item.GetComponent<DeckListButton>().cardIndex = itemIndex;
             UpdateInventoryListUI();
+            item.GetComponent<DeckListButton>().cardIndex = itemIndex;
             itemIndex++;
         }
         else
@@ -234,5 +235,10 @@ public class InventoryMenu : MonoBehaviour
                     CardUIObjects[i].GetComponent<BasicCard>().gameObject.SetActive(false);
                 }
             }
+    }
+
+    public void BackToMapButton()
+    {
+        SceneManager.LoadScene("Map Menu");
     }
 }

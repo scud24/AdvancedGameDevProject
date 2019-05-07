@@ -1,11 +1,16 @@
 ﻿using UnityEngine.Audio;
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instane;
-    public Sound[] sounds;
+    //public List<AudioClip> soundClips;
+    public AudioClip menuMusic;
+    public AudioClip combatMusic;
+    public string currentMusic;
+    public AudioSource audioSource;
     void Awake()
     {
         if(instane == null) {
@@ -14,25 +19,35 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        //source = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
-
-        foreach (Sound sound in sounds) {
-            sound.audioSource = gameObject.AddComponent<AudioSource>();
-            sound.audioSource.clip = sound.clip;
-            sound.audioSource.volume = sound.volume;
-            sound.audioSource.pitch = sound.pitch;
-            sound.audioSource.loop = sound.loop;
-        }
+        
     }
-
-    public void Play(string name) {
-        Sound resultSound = Array.Find(sounds, sound => sound.name == name);
-        if (resultSound == null) {
-            Debug.LogWarning("Sound: "+name+" not found!");
-        return;
-         }
-
-        resultSound.audioSource.Play();
+    public void PlayMusic(int trackIndex)
+    {
+        //currentMusic = name;
+        Play(trackIndex);
+    }
+    public void Play(int trackIndex) {
+        Debug.Log("Track index " + trackIndex);
+        //Debug.Log(soundClips[0]);
+        if(trackIndex ==0)
+        {
+            audioSource.clip = menuMusic;
+        }
+        else if(trackIndex == 1)
+        {
+            audioSource.clip = combatMusic;
+        }
+        audioSource.Play();
+    }
+    public void StopMusic()
+    {
+        
+    }
+    public void StopAllSounds()
+    {
+        Debug.Log("stopSounds");
+        
     }
 }

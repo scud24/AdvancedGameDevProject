@@ -8,7 +8,9 @@ public class MapMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("start");
+        //FindObjectOfType<AudioManager>().StopSoundbyName("Combat");
+        FindObjectOfType<AudioManager>().PlayMusic(0);
     }
 
     // Update is called once per frame

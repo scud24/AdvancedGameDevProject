@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("MenuSound");
+        //FindObjectOfType<AudioManager>().StopMusic();
+        FindObjectOfType<AudioManager>().PlayMusic(0);
     }
 
     // Update is called once per frame
@@ -36,6 +37,12 @@ public class MainMenu : MonoBehaviour
     public void QuitGame(string data)
     {
         Debug.Log("Quit Game Button Clicked");
-        Application.Quit();
+#if UNITY_EDITOR
+        // Application.Quit() does not work in the editor so
+        // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
     }
 }

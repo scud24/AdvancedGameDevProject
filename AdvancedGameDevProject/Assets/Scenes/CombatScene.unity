@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -927,11 +927,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.5999985
       objectReference: {fileID: 0}
-    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
-        type: 3}
-      propertyPath: sendsClick
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2795916231005404952, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -951,6 +946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.9398994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: sendsClick
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
@@ -1576,11 +1576,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.5999985
       objectReference: {fileID: 0}
-    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
-        type: 3}
-      propertyPath: sendsClick
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2795916231005404952, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1600,6 +1595,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.9398994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: sendsClick
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
@@ -2586,6 +2586,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b92d29f547740beac82c25c6709bee, type: 3}
+--- !u!1 &841619604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8304488068077839171, guid: e2b92d29f547740beac82c25c6709bee,
+    type: 3}
+  m_PrefabInstance: {fileID: 841619603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &870427247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2795916231954167681, guid: e025ba0f8c115fa43acea3e356fe52b4,
@@ -3196,7 +3202,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6410007122054095328}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6410007122054095329}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ff4b7c38ab46b4c8f11ac7637bf753, type: 3}
@@ -3899,11 +3905,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.5999985
       objectReference: {fileID: 0}
-    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
-        type: 3}
-      propertyPath: sendsClick
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2795916231005404952, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3923,6 +3924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.9398994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: sendsClick
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
@@ -4279,7 +4285,7 @@ MonoBehaviour:
   - {fileID: 927632235}
   enemyModels:
   - {fileID: 588903747}
-  - {fileID: 6410007122054095329}
+  - {fileID: 841619604}
   - {fileID: 931599505}
   - {fileID: 499471444}
   - {fileID: 1004337679}
@@ -5241,12 +5247,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7b4a403bbb8b546bd60e7fac35c675, type: 3}
---- !u!1 &6410007122054095329 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6410007123058287657, guid: 2e7b4a403bbb8b546bd60e7fac35c675,
-    type: 3}
-  m_PrefabInstance: {fileID: 6410007122054095328}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7043317047216358840
 PrefabInstance:
   m_ObjectHideFlags: 0
