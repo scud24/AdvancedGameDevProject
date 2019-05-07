@@ -1228,6 +1228,11 @@ MonoBehaviour:
   - {fileID: 7640065007778494023, guid: 6e985aa75fef923489aa77a5da6c7fe1, type: 3}
   - {fileID: 2128756196930690058, guid: 975495095de06664584fede7e888afdd, type: 3}
   - {fileID: 187045744378295129, guid: f3359043fd424ae4bb27813f300278ce, type: 3}
+  - {fileID: 1518782053867242458, guid: 56ca664b10baef247a32d486e4da148e, type: 3}
+  - {fileID: 7957544231361188866, guid: adf1c30816ddaab4b90af9566ae0fb94, type: 3}
+  - {fileID: 679644695088655776, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
+  - {fileID: 679644695088655776, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
+  - {fileID: 6220308979049868078, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}
   maxHealth: 20
   defence: 0
   defenceBonus: 0
