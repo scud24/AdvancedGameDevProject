@@ -32,6 +32,26 @@ PrefabInstance:
       propertyPath: attackAnimation
       value: Attack2
       objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: cardColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: cardColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: cardColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
+        type: 3}
+      propertyPath: cardColor.a
+      value: 0.73333335
+      objectReference: {fileID: 0}
     - target: {fileID: 4181065562691005095, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: m_LocalPosition.x
