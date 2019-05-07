@@ -19,6 +19,9 @@ public class PersistentGameManager : MonoBehaviour
     public PlayerData playerData;
     public List<CardData> globalPlayerCardList;
     public int playerGold;
+    public bool dungeonInProgress;
+    public Vector3 playerLastDungeonPos;
+    public Quaternion playerLastDungeonOrient;
 
     static bool created = false;
     void Awake()

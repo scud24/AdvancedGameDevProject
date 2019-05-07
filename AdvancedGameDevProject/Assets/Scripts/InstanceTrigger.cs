@@ -26,8 +26,7 @@ public class InstanceTrigger : MonoBehaviour
         Debug.Log("Ping: " + other.tag);
         if(other.tag == "Player")
         {
-            im.SetInstanceData(enemyIndex, arenaName, name);
-            im.StartInstance();
+            im.TriggerInstance(enemyIndex, arenaName, transform.parent.name);
         }
     }
 }

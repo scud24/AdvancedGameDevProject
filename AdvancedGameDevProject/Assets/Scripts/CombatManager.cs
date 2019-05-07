@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class CombatManager : MonoBehaviour
 {
@@ -45,6 +46,12 @@ public class CombatManager : MonoBehaviour
     public GameObject instanceManager;
     public GameObject enemyManager;
     public List<Sprite> heartSprites;
+
+    public GameObject winPanel;
+    public GameObject prizeCardUI;
+    public Text prizeGoldText;
+    public GameObject losePanel;
+    public PackTable pt;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,13 +64,20 @@ public class CombatManager : MonoBehaviour
 
         instanceManager = GameObject.Find("InstanceManager");
         enemyManager = GameObject.Find("EnemyManager");
-        Debug.Log("enemy set - index:" + instanceManager.GetComponent<InstanceManager>().enemyIndex.ToString());
-        enemy.SetupFromPlayerData(enemyManager.GetComponent<EnemyManager>().enemyList[instanceManager.GetComponent<InstanceManager>().enemyIndex]);//TODO ENEMY MANAGER
+        int enemyIndex = instanceManager.GetComponent<InstanceManager>().enemyIndex;
+        Debug.Log("enemy set - index:" + enemyIndex.ToString());
+        enemy.SetupFromPlayerData(enemyManager.GetComponent<EnemyManager>().enemyList[enemyIndex]);
+        GameObject enemyModel = enemyManager.GetComponent<EnemyManager>().GetEnemybyIndex(enemyIndex);
+        enemyAnimator = enemyModel.GetComponent<Animator>();
+        enemyModel.SetActive(true);
+
 
         Debug.Log("enemy deck set");
         enemyDeck.SetupFromList(player.currentDeck);
         Debug.Log(playerDeck.Count());
         Debug.Log(enemyDeck.Count());
+
+        UpdateHeartUI();
 
         playerDeck.shuffle();
         enemyDeck.shuffle();
@@ -161,8 +175,8 @@ public class CombatManager : MonoBehaviour
     public void PlayAttackAnimations()
     {
         playerAnimator.SetTrigger(playerCurrentCard.GetComponent<CardData>().attackAnimation);
-        //enemyAnimator.SetTrigger(enemyCurrentCard.GetComponent<CardData>().attackAnimation);
-        enemyAnimator.SetTrigger("basic_attack");
+        enemyAnimator.SetTrigger(enemyCurrentCard.GetComponent<CardData>().attackAnimation);
+        //enemyAnimator.SetTrigger("basic_attack");
     }
 
     public void combatResolution()
@@ -181,36 +195,10 @@ public class CombatManager : MonoBehaviour
         enemy.DamagePlayer(pAttack - eDefenceBonus);
         player.DamagePlayer(eAttack - pDefenceBonus);
         Debug.Log("Player: " + player.currentHealth  + " Enemy: " + enemy.currentHealth );
-        for (int i = 0; i <= 4; i++)
-        {
-            Debug.Log("Player: " + player.currentHealth / 4.0f + " Enemy: " + enemy.currentHealth / 4.0f + " i: " + i);
-            if ((player.currentHealth/ 4.0f) < i+1)
-            {
-                playerHearts[i].GetComponent<Image>().sprite = heartSprites[0];
-            }
-            else if((player.currentHealth/4.0f)>i+1)
-            {
-                playerHearts[i].GetComponent<Image>().sprite = heartSprites[4];
-            }
-            else
-            {
-                playerHearts[i].GetComponent<Image>().sprite = heartSprites[i];
-            }
+        UpdateHeartUI();
 
-            if ((enemy.currentHealth / 4.0f) < i+1)
-            {
-                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[0];
-            }
-            else if ((enemy.currentHealth / 4.0f) > i+1)
-            {
-                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[4];
-            }
-            else
-            {
-                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[i];
-            }
-        }
 
+        CheckWinner();
         if (enemyCurrentCard != null) {
             //enemyCurrentCard.transform.localPosition = enemyDiscardPos;
             Debug.Log(enemyCurrentCard.GetComponent<CardData>().cardTitle);
@@ -251,7 +239,7 @@ public class CombatManager : MonoBehaviour
 
     public void EnemyDraw()
     {
-        Debug.Log("enemy draw");
+        //Debug.Log("enemy draw");
         enemyCurrentCard = enemyDeck.drawCard();
         enemyCurrentCardUI.GetComponent<BasicCard>().SetCardData(enemyCurrentCard.GetComponent<CardData>());
         enemyCurrentCardUI.GetComponent<BasicCard>().SetupUI();
@@ -259,5 +247,91 @@ public class CombatManager : MonoBehaviour
 
 
         playerTurnButton.GetComponent<Button>().interactable = true;
+        PlayerTurn();
+    }
+    public void UpdateHeartUI()
+    {
+        int playerHeartShards = player.currentHealth % 4;
+        int playerCurrentFullHearts = ((player.currentHealth - playerHeartShards) / 4);
+        Debug.Log("Player hearts: " + playerCurrentFullHearts + " Player Shards: " + playerHeartShards);
+        if(playerHeartShards < 0)
+        {
+            playerHeartShards = 0;
+        }
+        for (int i = 0; i <= 4; i++)
+        {
+            if(i > playerCurrentFullHearts)
+            {
+                //Debug.Log("Player Heart at index " + i + " set to " + 0);
+                playerHearts[i].GetComponent<Image>().sprite = heartSprites[0];
+            }            
+            else if(i < playerCurrentFullHearts)
+            {
+                //Debug.Log("Player Heart at index " + i + " set to " + 4);
+                playerHearts[i].GetComponent<Image>().sprite = heartSprites[4];
+            }
+            else
+            {
+                //Debug.Log("Player Heart at index " + i + " set to " + playerHeartShards);
+                playerHearts[i].GetComponent<Image>().sprite = heartSprites[playerHeartShards];
+            }
+        }
+
+        int enemyHeartShards = enemy.currentHealth % 4;
+        int enemyCurrentFullHearts = ((enemy.currentHealth - enemyHeartShards) / 4);
+        Debug.Log("Enemy hearts: " + enemyCurrentFullHearts + " Enemy Shards: " + enemyHeartShards);
+        if (enemyHeartShards < 0)
+        {
+            enemyHeartShards = 0;
+        }
+        for (int i = 0; i <= 4; i++)
+        {
+            if (i > enemyCurrentFullHearts)
+            {
+                //Debug.Log("Enemy Heart at index " + i + " set to " + 0);
+                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[0];
+            }
+            else if (i < enemyCurrentFullHearts)
+            {
+                //Debug.Log("Enemy Heart at index " + i + " set to " + 4);
+                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[4];
+            }
+            else
+            {
+                //Debug.Log("Enemy Heart at index " + i + " set to " + enemyHeartShards);
+                enemyHearts[i].GetComponent<Image>().sprite = heartSprites[enemyHeartShards];
+            }
+        }
+
+    }
+
+    public void CheckWinner()
+    {
+        if (enemy.currentHealth <= 0)
+        {
+            CardData prizeCard = pt.rollSpecialCard();
+            prizeCardUI.GetComponent<BasicCard>().SetCardData(prizeCard);
+            prizeCardUI.GetComponent<BasicCard>().SetupUI();
+            pgm.GetComponent<PersistentGameManager>().playerData.cardInventory.Add(prizeCard);
+            prizeCardUI.SetActive(true);
+            int prizeGold = 10 + Random.Range(0, 30);
+            prizeGoldText.text = "Gold Found: " + prizeGold.ToString();
+            pgm.GetComponent<PersistentGameManager>().playerData.gold += prizeGold;
+            winPanel.SetActive(true);
+        }
+        else if(player.currentHealth <=0)
+        {
+            losePanel.SetActive(true);
+        }
+    }
+    public void WinPanelContinue()
+    {
+        SceneManager.LoadScene("environment");
+    }
+    public void LosePanelContinue()
+    {
+        pgm.GetComponent<PersistentGameManager>().dungeonInProgress = false;
+        Destroy(instanceManager.gameObject);
+        SceneManager.LoadScene("Map Menu");
     }
 }

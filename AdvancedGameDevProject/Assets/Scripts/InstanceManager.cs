@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InstanceManager : MonoBehaviour
 {
     public int enemyIndex;
     public string arenaName;
     public List<string> deactivatedTriggers;
-
+    public int numTriggers;
+    public GameObject player;
+    public GameObject pgm;
+    public GameObject dungeonPrizeMenu;
     static bool created = false;
     void Awake()
     {
+        pgm = GameObject.Find("PersistentGameManager");
         if (!created)
         {
             DontDestroyOnLoad(gameObject);
@@ -27,10 +32,35 @@ public class InstanceManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "environment")
         {
+            dungeonPrizeMenu = GameObject.Find("WinMenu");
             for(int i = 0; i < deactivatedTriggers.Count; i++)
             {
                 GameObject.Find(deactivatedTriggers[i]).SetActive(false);
             }
+            player = GameObject.Find("FPSMovePlayer");
+            if (pgm.GetComponent<PersistentGameManager>().dungeonInProgress)
+            {
+                Debug.Log("player loc start: " + player.transform.position);
+                Debug.Log("player last pos: " + pgm.GetComponent<PersistentGameManager>().playerLastDungeonPos);
+                pgm.GetComponent<PersistentGameManager>().playerLastDungeonPos.y += 0.1f;
+                player.transform.position = pgm.GetComponent<PersistentGameManager>().playerLastDungeonPos;
+
+                Debug.Log("player new pos: " + player.transform.position);
+                player.transform.rotation = pgm.GetComponent<PersistentGameManager>().playerLastDungeonOrient;
+
+                //Check if all instances clear
+                if (deactivatedTriggers.Count >= numTriggers)
+                {
+                    dungeonPrizeMenu.GetComponent<DungeonPrizeMenu>().showPrizeMenu();
+                }
+            }
+            else
+            {
+                Debug.Log("Starting at enterance");
+                pgm.GetComponent<PersistentGameManager>().dungeonInProgress = true;
+            }
+
+           
         }
     }
 
@@ -41,19 +71,23 @@ public class InstanceManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+
     }
 
-    public void SetInstanceData(int _enemyIndex, string _arenaName, string triggerName)
+    public void TriggerInstance(int _enemyIndex, string _arenaName, string triggerName)
     {
         enemyIndex = _enemyIndex;
+        if(deactivatedTriggers.Count >= numTriggers -1)
+        {
+            enemyIndex = 1; //Set enemy to boss for last room
+        }
         arenaName = _arenaName;
         deactivatedTriggers.Add(triggerName);
-    }
-    public void StartInstance()
-    {
+        pgm.GetComponent<PersistentGameManager>().playerLastDungeonPos = player.transform.position;
+        pgm.GetComponent<PersistentGameManager>().playerLastDungeonOrient = player.transform.rotation;
         SceneManager.LoadScene(arenaName);
     }
+    
 }

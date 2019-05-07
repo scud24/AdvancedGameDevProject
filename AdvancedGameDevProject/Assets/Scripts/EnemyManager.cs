@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public List<PlayerData> enemyList;
+    public List<GameObject> enemyModels;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,10 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public GameObject GetEnemybyIndex(int enemyIndex)
+    {
+        return enemyModels[enemyIndex];
     }
 }

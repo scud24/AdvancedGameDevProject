@@ -1209,6 +1209,11 @@ MonoBehaviour:
   currrentDeck:
   - {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695, type: 3}
   - {fileID: 7957544231361188866, guid: adf1c30816ddaab4b90af9566ae0fb94, type: 3}
+  - {fileID: 2128756196930690058, guid: 975495095de06664584fede7e888afdd, type: 3}
+  - {fileID: 1518782053867242458, guid: 56ca664b10baef247a32d486e4da148e, type: 3}
+  - {fileID: 2677790238718209658, guid: 6bff085c43f30ab4799ae6818b9c8775, type: 3}
+  - {fileID: 1054940123656870499, guid: 641abc803f027e14cacfa41ab7aa2ef8, type: 3}
+  - {fileID: 7390857232083078825, guid: 168c460e5a8cf0347ac55af898b0ebd0, type: 3}
   cardInventory:
   - {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695, type: 3}
   - {fileID: 7555820354188545849, guid: fd110eb6f864cf147a8b222a78e8b751, type: 3}
@@ -1223,7 +1228,7 @@ MonoBehaviour:
   - {fileID: 7640065007778494023, guid: 6e985aa75fef923489aa77a5da6c7fe1, type: 3}
   - {fileID: 2128756196930690058, guid: 975495095de06664584fede7e888afdd, type: 3}
   - {fileID: 187045744378295129, guid: f3359043fd424ae4bb27813f300278ce, type: 3}
-  maxHealth: 0
+  maxHealth: 20
   defence: 0
   defenceBonus: 0
   gold: 10000
