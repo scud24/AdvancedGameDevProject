@@ -56,9 +56,9 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         pgm = GameObject.Find("PersistentGameManager");
-        Debug.Log("Player set");
+        //Debug.Log("Player set");
         player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
-        Debug.Log("Player deck set");
+        //Debug.Log("Player deck set");
         playerDeck.SetupFromList(player.currentDeck);
 
 
@@ -73,9 +73,8 @@ public class CombatManager : MonoBehaviour
 
 
         Debug.Log("enemy deck set");
-        enemyDeck.SetupFromList(player.currentDeck);
-        Debug.Log(playerDeck.Count());
-        Debug.Log(enemyDeck.Count());
+        enemyDeck.SetupFromList(enemy.currentDeck);
+        Debug.Log("Player deck count: " + playerDeck.Count() + " Enemy deck count: " + enemyDeck.Count());
 
         UpdateHeartUI();
 
@@ -128,6 +127,18 @@ public class CombatManager : MonoBehaviour
         playerTurnButton.GetComponent<Button>().interactable = false;
     }
 
+    public void LosePanelContinue()
+    {
+
+        pgm = GameObject.Find("PersistentGameManager");
+        pgm.GetComponent<PersistentGameManager>().SetInProgress(false);
+        Debug.Log("Exiting by lose");
+        instanceManager = GameObject.Find("InstanceManager");
+        Destroy(instanceManager.gameObject);
+
+        FindObjectOfType<AudioManager>().PlayMusic(0);
+        SceneManager.LoadScene("Map Menu");
+    }
     public void CardClick(string callerName, string callerTag)
     {
         if(callerName == "PlayerHandCard1")
@@ -203,7 +214,7 @@ public class CombatManager : MonoBehaviour
         CheckWinner();
         if (enemyCurrentCard != null) {
             //enemyCurrentCard.transform.localPosition = enemyDiscardPos;
-            Debug.Log(enemyCurrentCard.GetComponent<CardData>().cardTitle);
+            //Debug.Log(enemyCurrentCard.GetComponent<CardData>().cardTitle);
             enemyDiscard.Add(enemyCurrentCard);
             enemyDiscardUI.GetComponent<BasicCard>().SetCardData(enemyCurrentCard.GetComponent<CardData>());
             enemyDiscardUI.GetComponent<BasicCard>().SetupUI();
@@ -329,11 +340,5 @@ public class CombatManager : MonoBehaviour
     public void WinPanelContinue()
     {
         SceneManager.LoadScene("environment");
-    }
-    public void LosePanelContinue()
-    {
-        pgm.GetComponent<PersistentGameManager>().dungeonInProgress = false;
-        Destroy(instanceManager.gameObject);
-        SceneManager.LoadScene("Map Menu");
     }
 }

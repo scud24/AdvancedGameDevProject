@@ -18874,7 +18874,7 @@ PrefabInstance:
     - target: {fileID: 3796993406592537152, guid: 2cf586d4bfd64de48b59e7d8329864e3,
         type: 3}
       propertyPath: enemyIndex
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf586d4bfd64de48b59e7d8329864e3, type: 3}
@@ -20432,6 +20432,7 @@ MonoBehaviour:
   player: {fileID: 0}
   pgm: {fileID: 0}
   dungeonPrizeMenu: {fileID: 9186868263152947139}
+  am: {fileID: 0}
 --- !u!4 &1988330425
 Transform:
   m_ObjectHideFlags: 0
@@ -20561,7 +20562,7 @@ PrefabInstance:
     - target: {fileID: 102537848313819106, guid: f34f954b2de62b24ea31ec573836fbbe,
         type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 102537848313819105, guid: f34f954b2de62b24ea31ec573836fbbe,
         type: 3}
