@@ -20,9 +20,9 @@ public class PlayerCharacter : MonoBehaviour {
     public Vector3 playerVelocity;
     bool pressedJump = false;
     float jumpVelocity = 0;
-
+    public bool isWalking;
     public bool isGrounded;
-
+    public Animator playerAnimator;
     public bool turnLeft;
     public bool turnRight;
     public bool stunned;
@@ -116,6 +116,15 @@ public class PlayerCharacter : MonoBehaviour {
         // Movement vector
         Vector3 movement = new Vector3(hAxis * distance, 0f, vAxis * distance);
         movement = transform.TransformDirection(movement);
+        if (movement.magnitude > 0.01)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+        }
+        playerAnimator.SetBool("isWalking", isWalking);
         //Debug.Log(transform.TransformDirection(movement));
         // Current position
         Vector3 currPosition = transform.position;
@@ -142,6 +151,7 @@ public class PlayerCharacter : MonoBehaviour {
         isGrounded = true;
         isGrounded = CheckGrounded();
 
+        playerAnimator.SetBool("isGrounded", isGrounded);
         // Check if the player is pressing the jump key
         if (jAxis > 0f)
         {
@@ -168,7 +178,7 @@ public class PlayerCharacter : MonoBehaviour {
     // Check if the object is grounded
     bool CheckGrounded()
     {
-        float rayDist = 0.1f;
+        float rayDist = 0.3f;
         // Object size in x
         float sizeX = coll.bounds.size.x;
         float sizeZ = coll.bounds.size.z;

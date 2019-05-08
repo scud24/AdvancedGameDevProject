@@ -60,7 +60,8 @@ public class CombatManager : MonoBehaviour
         player.SetupFromPlayerData(pgm.GetComponent<PersistentGameManager>().playerData);
         //Debug.Log("Player deck set");
         playerDeck.SetupFromList(player.currentDeck);
-
+        playerAnimator.SetBool("isWalking", false);
+        playerAnimator.SetBool("isGrounded", true);
 
         instanceManager = GameObject.Find("InstanceManager");
         enemyManager = GameObject.Find("EnemyManager");
