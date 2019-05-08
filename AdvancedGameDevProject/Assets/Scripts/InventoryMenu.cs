@@ -72,7 +72,7 @@ public class InventoryMenu : MonoBehaviour
     private void addItem(int cardID) {
         if (items.Count < 20)
         {
-            cardID -= 1; //Adjust cardID to give index, not slot number
+            cardID = cardID - 1 + (10*currentCardPage); //Adjust cardID to give index, not slot number
             int value = itemIndex + 1;
 
             // Create new item
@@ -104,10 +104,6 @@ public class InventoryMenu : MonoBehaviour
     //Navigates to previous page
     public void DeckLeftButton()
     {
-        if (((int)(pgm.playerData.cardInventory.Count / 10)) >= currentCardPage + 1)
-        {
-            buttonRight.GetComponent<Button>().interactable = true;
-        }
         if (0 <= currentCardPage - 1)
         {
          
@@ -136,17 +132,18 @@ public class InventoryMenu : MonoBehaviour
         {
             buttonLeft.GetComponent<Button>().interactable = false;
         }
+
+        if (((int)(pgm.playerData.cardInventory.Count / 10)) >= currentCardPage + 1)
+        {
+            buttonRight.GetComponent<Button>().interactable = true;
+        }
     }
 
 
     //Navigates to next page
     public void DeckRightButton()
     {
-        if (0 <= currentCardPage - 1)
-        {
-            buttonLeft.GetComponent<Button>().interactable = true;
-        }
-        if (((int)(pgm.playerData.cardInventory.Count / 10)) >= currentCardPage + 1)
+        if (((int)(pgm.playerData.cardInventory.Count / 10)) >= currentCardPage)
         {
             currentCardPage += 1;
             for (int i = 0; i < 10; i++)
@@ -172,6 +169,11 @@ public class InventoryMenu : MonoBehaviour
         if ((int)(pgm.playerData.cardInventory.Count / 10) == currentCardPage)
         {
             buttonRight.GetComponent<Button>().interactable = false;
+        }
+
+        if (0 <= currentCardPage - 1)
+        {
+            buttonLeft.GetComponent<Button>().interactable = true;
         }
     }
     public void UpdateDeckListUI()
