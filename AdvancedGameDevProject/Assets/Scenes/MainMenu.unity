@@ -1210,7 +1210,7 @@ MonoBehaviour:
   maxHealth: 20
   defence: 0
   defenceBonus: 0
-  gold: 10000
+  gold: 50
 --- !u!4 &1228188750
 Transform:
   m_ObjectHideFlags: 0
