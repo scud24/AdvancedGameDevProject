@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5002192757160419395, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: m_Name
-      value: Double Stab Variant
+      value: Gobbo Double Stab Variant
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}
       propertyPath: attackPower
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 142566600918811093, guid: 7d549b83424543e49943c6f82ea55304,
         type: 3}

@@ -912,6 +912,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: sendsClick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231067733579, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -946,11 +951,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.9398994
-      objectReference: {fileID: 0}
-    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
-        type: 3}
-      propertyPath: sendsClick
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
@@ -1561,6 +1561,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: sendsClick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231067733579, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1595,11 +1600,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.9398994
-      objectReference: {fileID: 0}
-    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
-        type: 3}
-      propertyPath: sendsClick
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
@@ -3890,6 +3890,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
+        type: 3}
+      propertyPath: sendsClick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2795916231067733579, guid: e025ba0f8c115fa43acea3e356fe52b4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3924,11 +3929,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.9398994
-      objectReference: {fileID: 0}
-    - target: {fileID: 2795916231954167693, guid: e025ba0f8c115fa43acea3e356fe52b4,
-        type: 3}
-      propertyPath: sendsClick
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e025ba0f8c115fa43acea3e356fe52b4, type: 3}
@@ -4580,6 +4580,7 @@ MonoBehaviour:
   player: {fileID: 0}
   pgm: {fileID: 0}
   dungeonPrizeMenu: {fileID: 0}
+  am: {fileID: 0}
 --- !u!4 &1991977542
 Transform:
   m_ObjectHideFlags: 0
@@ -4798,6 +4799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GoblinBrown_PlayerData
+      objectReference: {fileID: 0}
+    - target: {fileID: 416958129743142814, guid: 4b06ed1462e247c4a9e859dbb4b9dd17,
+        type: 3}
+      propertyPath: maxHealth
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 416958129743142809, guid: 4b06ed1462e247c4a9e859dbb4b9dd17,
         type: 3}
@@ -5120,6 +5126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GoblinRed_PlayerData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366537275286003330, guid: 36eb83710ccd4b241afc2515349b13bd,
+        type: 3}
+      propertyPath: maxHealth
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6366537275286003329, guid: 36eb83710ccd4b241afc2515349b13bd,
         type: 3}
@@ -5673,6 +5684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GoblinBlue_PlayerData
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193315472964589302, guid: 48692d27b60566e49a163f4913443b68,
+        type: 3}
+      propertyPath: maxHealth
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8193315472964589297, guid: 48692d27b60566e49a163f4913443b68,
         type: 3}

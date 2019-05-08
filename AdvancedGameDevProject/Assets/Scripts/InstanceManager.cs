@@ -14,11 +14,14 @@ public class InstanceManager : MonoBehaviour
     public GameObject pgm;
     public GameObject dungeonPrizeMenu;
     static bool created = false;
+    public AudioManager am;
     void Awake()
     {
+        am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         pgm = GameObject.Find("PersistentGameManager");
         if (!created)
         {
+            pgm.GetComponent<PersistentGameManager>().dungeonInProgress = false;
             DontDestroyOnLoad(gameObject);
             created = true;
         }
@@ -32,6 +35,8 @@ public class InstanceManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "environment")
         {
+
+            
             dungeonPrizeMenu = GameObject.Find("WinMenu");
             for(int i = 0; i < deactivatedTriggers.Count; i++)
             {
@@ -40,6 +45,8 @@ public class InstanceManager : MonoBehaviour
             player = GameObject.Find("FPSMovePlayer");
             if (pgm.GetComponent<PersistentGameManager>().dungeonInProgress)
             {
+
+                am.PlayMusic(0);
                 Debug.Log("player loc start: " + player.transform.position);
                 Debug.Log("player last pos: " + pgm.GetComponent<PersistentGameManager>().playerLastDungeonPos);
                 pgm.GetComponent<PersistentGameManager>().playerLastDungeonPos.y += 0.1f;
@@ -67,7 +74,6 @@ public class InstanceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

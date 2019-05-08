@@ -62,5 +62,10 @@ public class PersistentGameManager : MonoBehaviour
         //TODO: Add code to load game data
     }
 
+    public void SetInProgress(bool ip)
+    {
+        dungeonInProgress = ip;
+    }
+
     //TODO: Add helper functions as needed
 }

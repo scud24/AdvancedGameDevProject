@@ -31,15 +31,23 @@ public class AudioManager : MonoBehaviour
     public void Play(int trackIndex) {
         Debug.Log("Track index " + trackIndex);
         //Debug.Log(soundClips[0]);
-        if(trackIndex ==0)
+        audioSource.Stop();
+        if (trackIndex == 0)
         {
-            audioSource.clip = menuMusic;
+            audioSource.PlayOneShot(menuMusic);
+           // audioSource.clip = menuMusic;
         }
         else if(trackIndex == 1)
         {
-            audioSource.clip = combatMusic;
+            audioSource.PlayOneShot(combatMusic);
         }
-        audioSource.Play();
+        else
+        {
+            Debug.Log("Ping");
+        }
+        //audioSource = GetComponent<AudioSource>();
+        
+       // audioSource.Play();
     }
     public void StopMusic()
     {
