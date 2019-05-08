@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2697760783296710609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2697760783296710615}
+  - component: {fileID: 2697760783296710608}
+  m_Layer: 0
+  m_Name: placeholderPlayerData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2697760783296710615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697760783296710609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9834747, y: 4.102742, z: -0.02029705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2697760783296710608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697760783296710609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ff4b7c38ab46b4c8f11ac7637bf753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currrentDeck:
+  - {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695, type: 3}
+  - {fileID: 7555820354188545849, guid: fd110eb6f864cf147a8b222a78e8b751, type: 3}
+  - {fileID: 3114406985132070123, guid: 222564e5daf57e34a921940475f81a84, type: 3}
+  - {fileID: 7640065007778494023, guid: 6e985aa75fef923489aa77a5da6c7fe1, type: 3}
+  cardInventory:
+  - {fileID: 2922256896819966630, guid: 271bc3be0cc986b41ba80f59026a4695, type: 3}
+  - {fileID: 7555820354188545849, guid: fd110eb6f864cf147a8b222a78e8b751, type: 3}
+  - {fileID: 3114406985132070123, guid: 222564e5daf57e34a921940475f81a84, type: 3}
+  - {fileID: 7640065007778494023, guid: 6e985aa75fef923489aa77a5da6c7fe1, type: 3}
+  - {fileID: 2128756196930690058, guid: 975495095de06664584fede7e888afdd, type: 3}
+  - {fileID: 187045744378295129, guid: f3359043fd424ae4bb27813f300278ce, type: 3}
+  maxHealth: 20
+  defence: 0
+  defenceBonus: 0
+  gold: 10000

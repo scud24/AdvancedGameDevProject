@@ -5,6 +5,12 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# Never ignore Asset meta data
+!/[Aa]ssets/**/*.meta
+
+# TextMesh Pro files
+[Aa]ssets/TextMesh*Pro/
+
 # Visual Studio cache directory
 .vs/
 
@@ -35,3 +41,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+# TextMesh Pro files
+[Aa]ssets/TextMesh*Pro/
+# Never ignore Asset meta data
+!/[Aa]ssets/*/.meta
+

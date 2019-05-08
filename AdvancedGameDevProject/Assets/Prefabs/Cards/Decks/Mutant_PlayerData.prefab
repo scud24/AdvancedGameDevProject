@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2824575955742266484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2824575955742266486}
+  - component: {fileID: 2824575955742266487}
+  m_Layer: 0
+  m_Name: Mutant_PlayerData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2824575955742266486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2824575955742266484}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2824575955742266487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2824575955742266484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ff4b7c38ab46b4c8f11ac7637bf753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currrentDeck:
+  - {fileID: 7602980893513501035, guid: 854e83bf365ebba4d8609484021dfc0a, type: 3}
+  - {fileID: 7602980893513501035, guid: 854e83bf365ebba4d8609484021dfc0a, type: 3}
+  - {fileID: 3675417734762554265, guid: a5f6ef684348a97428552a166171b0b6, type: 3}
+  - {fileID: 3675417734762554265, guid: a5f6ef684348a97428552a166171b0b6, type: 3}
+  - {fileID: 1263307804641488376, guid: 10ad837729b535c4fa2f1587891e67ab, type: 3}
+  - {fileID: 1263307804641488376, guid: 10ad837729b535c4fa2f1587891e67ab, type: 3}
+  - {fileID: 1263307804641488376, guid: 10ad837729b535c4fa2f1587891e67ab, type: 3}
+  cardInventory: []
+  maxHealth: 16
+  defence: 0
+  defenceBonus: 0
+  gold: 10000

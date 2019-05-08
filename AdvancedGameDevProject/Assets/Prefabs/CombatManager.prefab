@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7043317047987951407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7043317047987951392}
+  - component: {fileID: 7043317047987951393}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7043317047987951392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043317047987951407}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8211365, y: 11.010803, z: -2.965625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7043317047987951393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043317047987951407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3037171d1d042cd4896b3a09e8edfa28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerDeck: {fileID: 0}
+  playerCurrentCard: {fileID: 0}
+  playerCurrentCardUI: {fileID: 0}
+  playerDiscard: []
+  playerDiscardUI: {fileID: 0}
+  playerHandUI1: {fileID: 0}
+  playerHandUI2: {fileID: 0}
+  playerHandUI3: {fileID: 0}
+  enemy: {fileID: 0}
+  enemyDeck: {fileID: 0}
+  enemyHand: {fileID: 0}
+  enemyCurrentCard: {fileID: 0}
+  enemyCurrentCardUI: {fileID: 0}
+  enemyDiscard: []
+  enemyDiscardUI: {fileID: 0}
+  dummyCards:
+  - {fileID: 6420998534286998940, guid: 975495095de06664584fede7e888afdd, type: 3}
+  - {fileID: 6420998534286998940, guid: 975495095de06664584fede7e888afdd, type: 3}
+  - {fileID: 6420998534286998940, guid: 975495095de06664584fede7e888afdd, type: 3}
+  - {fileID: 6420998534286998940, guid: 975495095de06664584fede7e888afdd, type: 3}
+  - {fileID: 1352168754519034552, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}
+  - {fileID: 1352168754519034552, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}
+  - {fileID: 1352168754519034552, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}
+  - {fileID: 1352168754519034552, guid: e34f6d90d90e7854084a55fc0a12b332, type: 3}
+  - {fileID: 8877931082633211026, guid: 917dea5ead154424daa182097403cd17, type: 3}
+  - {fileID: 8877931082633211026, guid: 917dea5ead154424daa182097403cd17, type: 3}
+  - {fileID: 8877931082633211026, guid: 917dea5ead154424daa182097403cd17, type: 3}
+  - {fileID: 8877931082633211026, guid: 917dea5ead154424daa182097403cd17, type: 3}
+  - {fileID: 5873512384734372428, guid: 56ca664b10baef247a32d486e4da148e, type: 3}
+  - {fileID: 5873512384734372428, guid: 56ca664b10baef247a32d486e4da148e, type: 3}
+  - {fileID: 5873512384734372428, guid: 56ca664b10baef247a32d486e4da148e, type: 3}
+  - {fileID: 5873512384734372428, guid: 56ca664b10baef247a32d486e4da148e, type: 3}
+  - {fileID: 5620405894181358646, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
+  - {fileID: 5620405894181358646, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
+  - {fileID: 5620405894181358646, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
+  - {fileID: 5620405894181358646, guid: ff1c37c5b07cdf44389ddc8dccd2be51, type: 3}
+  MAX_TURN_END_WAIT: 50
+  currentTurnEndWait: 0
+  waitingForNextTurn: 0
+  playArea: {fileID: 0}
+  endPanel: {fileID: 0}
+  endPanelText: {fileID: 0}
+  startButton: {fileID: 0}
+  playerTurnButton: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  enemyAnimator: {fileID: 0}

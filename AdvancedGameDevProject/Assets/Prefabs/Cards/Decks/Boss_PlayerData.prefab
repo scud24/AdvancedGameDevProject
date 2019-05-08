@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6410007123058287657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6410007123058287659}
+  - component: {fileID: 6410007123058287658}
+  m_Layer: 0
+  m_Name: Boss_PlayerData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6410007123058287659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410007123058287657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6410007123058287658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410007123058287657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ff4b7c38ab46b4c8f11ac7637bf753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currrentDeck:
+  - {fileID: 2939810218535697781, guid: 46d26a4c7045d6f42ae53fc3197f02a7, type: 3}
+  - {fileID: 1241005311519189197, guid: 90cfec773481dbd4ebd40e11c021bbb6, type: 3}
+  - {fileID: 4589523137341083849, guid: f49b6c7712f8c0d42ba52c0c4bddf74d, type: 3}
+  - {fileID: 818016703527588156, guid: 50894a30fcda6ef4b97db3a146676f52, type: 3}
+  - {fileID: 5531920528905207676, guid: 7e49ab6a46d3f474f8890396fd9bb17b, type: 3}
+  - {fileID: 6654982710189441659, guid: 61d0bc41c43339448bc6e2e37ad49f75, type: 3}
+  - {fileID: 1241005311519189197, guid: 90cfec773481dbd4ebd40e11c021bbb6, type: 3}
+  - {fileID: 818016703527588156, guid: 50894a30fcda6ef4b97db3a146676f52, type: 3}
+  - {fileID: 818016703527588156, guid: 50894a30fcda6ef4b97db3a146676f52, type: 3}
+  - {fileID: 6654982710189441659, guid: 61d0bc41c43339448bc6e2e37ad49f75, type: 3}
+  - {fileID: 5531920528905207676, guid: 7e49ab6a46d3f474f8890396fd9bb17b, type: 3}
+  - {fileID: 5531920528905207676, guid: 7e49ab6a46d3f474f8890396fd9bb17b, type: 3}
+  cardInventory: []
+  maxHealth: 20
+  defence: 0
+  defenceBonus: 0
+  gold: 10000

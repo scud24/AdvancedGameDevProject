@@ -16,6 +16,27 @@ using UnityEngine;
 public class PersistentGameManager : MonoBehaviour
 {
     //TODO: Add various structures for handling game data here
+    public PlayerData playerData;
+    public List<CardData> globalPlayerCardList;
+    public int playerGold;
+    public bool dungeonInProgress;
+    public Vector3 playerLastDungeonPos;
+    public Quaternion playerLastDungeonOrient;
+
+    static bool created = false;
+    void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(playerData.gameObject);
+            created = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +60,11 @@ public class PersistentGameManager : MonoBehaviour
     void LoadGameData()
     {
         //TODO: Add code to load game data
+    }
+
+    public void SetInProgress(bool ip)
+    {
+        dungeonInProgress = ip;
     }
 
     //TODO: Add helper functions as needed
